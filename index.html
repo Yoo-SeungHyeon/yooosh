@@ -1,952 +1,197 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>당신의 포트폴리오</title>
-  <!-- Vue.js CDN -->
-  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-  <!-- Vuetify CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/vuetify@3.x/dist/vuetify.min.css" rel="stylesheet">
-  <!-- Material Design Icons CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.x/css/materialdesignicons.min.css" rel="stylesheet">
-  <!-- Vuetify JS -->
-  <script src="https://cdn.jsdelivr.net/npm/vuetify@3.x/dist/vuetify.min.js"></script>
-  <style>
-    /* 폰트 임포트 (Google Fonts - Inter) */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
-    body, html {
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden; /* 가로 스크롤 방지 */
-    }
-
-    /* Vuetify 기본 오버라이드 및 전반적인 배경 */
-    .app-background {
-      background-color: #FFFFFF !important; /* 흰색 배경 */
-    }
-
-    /* 모든 섹션의 컨테이너 */
-    .section-container {
-      padding: 64px 0; /* 상하 패딩 */
-      position: relative;
-      overflow: hidden; /* 내용이 넘치지 않도록 */
-    }
-
-    /* 컨테이너의 최대 너비를 설정하여 양쪽에 여백 주기 */
-    @media (min-width: 1280px) { /* Vuetify의 'lg' breakpoint 이상에 해당 */
-        .section-container .v-container {
-            max-width: 50% !important; /* 100% - (25% + 25%) = 50% */
-            margin-left: 25% !important;
-            margin-right: 25% !important;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yooosh - 백엔드 개발자 포트폴리오</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
         }
-    }
-
-
-    /* 스케치 느낌 텍스트 스타일 */
-    .sketchy-text {
-      font-family: 'Inter', sans-serif;
-      color: #333333; /* 단색 (어두운 회색) */
-      text-shadow: 1px 1px 0px rgba(0,0,0,0.05);
-    }
-
-    .sketchy-text.display-3, .sketchy-text.display-2, .sketchy-text.text-h6 {
-      line-height: 1.2;
-    }
-
-    .sketchy-text--last {
-      margin-bottom: 0 !important;
-    }
-
-    /* 스케치 느낌 버튼 */
-    .sketchy-button {
-      border: 2px solid #333333 !important; /* 두꺼운 단색 테두리 */
-      border-radius: 8px !important; /* 약간 둥근 모서리 */
-      background-color: transparent !important;
-      color: #333333 !important;
-      font-weight: bold !important;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .sketchy-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(0,0,0,0.05), transparent);
-      transition: all 0.4s ease-in-out;
-    }
-
-    .sketchy-button:hover::before {
-      left: 100%;
-    }
-
-    .sketchy-button:hover {
-      background-color: rgba(0, 0, 0, 0.03) !important;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    /* 스케치 느낌 이미지 */
-    .sketchy-image {
-      border: 2px solid #333333;
-      box-shadow: 8px 8px 0px rgba(0,0,0,0.1); /* 스케치 느낌 그림자 */
-      transition: transform 0.3s ease-in-out;
-    }
-    .sketchy-image:hover {
-      transform: translate(-4px, -4px); /* 호버 시 약간 이동 */
-    }
-
-    /* 수평 스크롤 컨테이너 */
-    .horizontal-scroll-container {
-      overflow-x: auto;
-      white-space: nowrap; /* 자식 요소들이 한 줄에 오도록 */
-      padding-bottom: 20px; /* 스크롤바 공간 확보 */
-      -webkit-overflow-scrolling: touch; /* iOS 부드러운 스크롤 */
-      scrollbar-width: thin; /* Firefox */
-      scrollbar-color: #999 #f1f1f1; /* Firefox */
-    }
-
-    /* 커스텀 스크롤바 (Chrome, Edge, Safari) */
-    .horizontal-scroll-container::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    .horizontal-scroll-container::-webkit-scrollbar-track {
-      background: #f1f1f1;
-      border-radius: 10px;
-    }
-
-    .horizontal-scroll-container::-webkit-scrollbar-thumb {
-      background: #999;
-      border-radius: 10px;
-    }
-
-    .horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
-
-    .project-card-wrapper {
-      margin-right: 24px; /* 카드 사이 간격 */
-      width: 340px; /* 고정된 카드 너비 */
-    }
-
-    /* 마지막 카드에는 margin-right를 주지 않음 */
-    .project-card-wrapper:last-child {
-      margin-right: 0;
-    }
-
-    /* 투명한 리스트 (연락처 섹션) */
-    .transparent-list {
-      background-color: transparent !important;
-    }
-
-    .sketchy-list .v-list-item {
-      color: #333333 !important;
-      font-weight: 500;
-      transition: transform 0.2s ease-in-out;
-      border-bottom: 1px dashed rgba(0, 0, 0, 0.2); /* 점선 구분 */
-      margin-bottom: 8px;
-      padding-bottom: 8px;
-    }
-
-    .sketchy-list .v-list-item:hover {
-      transform: translateX(5px);
-      background-color: rgba(0, 0, 0, 0.02) !important;
-    }
-
-    .sketchy-list .v-list-item:last-child {
-      border-bottom: none;
-    }
-
-    .sketchy-list .v-list-item .v-icon {
-      color: #333333 !important;
-    }
-
-    /* ProjectCard styles */
-    .sketchy-card {
-      border: 2px solid #333333 !important;
-      border-radius: 8px !important;
-      box-shadow: 6px 6px 0px rgba(0,0,0,0.15) !important; /* 카드 자체의 스케치 그림자 */
-      transition: all 0.3s ease-in-out;
-      cursor: pointer;
-      background-color: #fff; /* 흰색 배경 */
-      overflow: hidden; /* 이미지 경계를 깔끔하게 */
-    }
-
-    .sketchy-card:hover {
-      transform: translate(-3px, -3px);
-      box-shadow: 10px 10px 0px rgba(0,0,0,0.2) !important;
-    }
-
-    .sketchy-image-card {
-      border-bottom: 2px solid #333333; /* 이미지 하단에 스케치 선 */
-    }
-
-    /* 스케치 느낌 텍스트 (ProjectCard 내) */
-    .sketchy-card .v-card-title,
-    .sketchy-card .v-card-subtitle,
-    .sketchy-card .v-card-text div {
-      font-family: 'Inter', sans-serif;
-      color: #333333;
-    }
-
-    .sketchy-card .v-card-text .v-icon {
-      color: #666; /* 아이콘 색상 */
-    }
-
-    /* 카드 내부 버튼 스타일 */
-    .sketchy-button-inner {
-      border: 1px solid #333333 !important;
-      border-radius: 4px !important;
-      background-color: transparent !important;
-      color: #333333 !important;
-      font-weight: 600 !important;
-      transition: all 0.2s ease;
-      padding: 0 12px;
-      min-width: unset; /* Vuetify 기본값 오버라이드 */
-    }
-
-    .sketchy-button-inner:hover {
-      background-color: rgba(0, 0, 0, 0.05) !important;
-      transform: translateY(-1px);
-    }
-
-    /* ProjectDetailModal styles */
-    .sketchy-modal-card {
-      border: 2px solid #333333 !important;
-      border-radius: 12px !important; /* 더 둥근 모서리 */
-      box-shadow: 10px 10px 0px rgba(0,0,0,0.25) !important; /* 더 강한 스케치 그림자 */
-      background-color: #FFFFFF !important;
-      overflow: hidden; /* 이미지 경계를 깔끔하게 */
-    }
-
-    .sketchy-image-modal {
-      border-bottom: 2px solid #333333; /* 이미지 하단에 스케치 선 */
-    }
-
-    /* 텍스트 스타일 */
-    .sketchy-modal-card .sketchy-text {
-      font-family: 'Inter', sans-serif;
-      color: #333333;
-      /* 텍스트가 부모 컨테이너를 벗어나지 않도록 줄바꿈 설정 */
-      overflow-wrap: break-word; /* 긴 단어를 강제로 줄바꿈 */
-      word-break: break-word; /* 더 적극적으로 단어 중간에도 줄바꿈 */
-    }
-
-    /* 모달 내 리스트 스타일 조정 */
-    .sketchy-modal-card .v-card-text ul,
-    .main-project-details ul { /* 대표 프로젝트 리스트에도 적용 */
-        list-style-type: disc; /* 점 스타일 */
-        padding-left: 20px; /* 좌측 여백 추가 */
-        margin-left: 0; /* 기본 마진 제거 */
-    }
-
-    .sketchy-modal-card .v-card-text ul li,
-    .main-project-details ul li { /* 대표 프로젝트 리스트 항목에도 적용 */
-        margin-bottom: 8px; /* 리스트 항목 하단 여백 */
-        line-height: 1.5;
-    }
-
-    /* 닫기 버튼 */
-    .sketchy-close-btn {
-      border: 1px solid #333333 !important;
-      border-radius: 50% !important;
-      color: #333333 !important;
-      background-color: transparent !important;
-      transition: all 0.2s ease;
-    }
-    .sketchy-close-btn:hover {
-      background-color: rgba(0,0,0,0.05) !important;
-      transform: rotate(90deg); /* 닫기 버튼 회전 효과 */
-    }
-
-    /* 칩 스타일 */
-    .sketchy-chip {
-      border: 1px dashed #666666 !important; /* 점선 테두리 */
-      background-color: #f5f5f5 !important;
-      color: #333333 !important;
-      font-weight: 500;
-    }
-
-    /* 모달 내부 버튼 스타일 */
-    .sketchy-button-modal {
-      border: 1px solid #333333 !important;
-      border-radius: 6px !important;
-      background-color: transparent !important;
-      color: #333333 !important;
-      font-weight: bold !important;
-      transition: all 0.3s ease;
-    }
-
-    .sketchy-button-modal:hover {
-      background-color: rgba(0, 0, 0, 0.05) !important;
-      transform: translateY(-2px);
-    }
-
-    .sketchy-button-modal--primary {
-      background-color: #333333 !important;
-      color: #FFFFFF !important;
-    }
-
-    .sketchy-button-modal--primary:hover {
-      background-color: #555555 !important;
-    }
-
-    .sketchy-button-modal--close {
-      border: none !important;
-      color: #666666 !important;
-    }
-    .sketchy-button-modal--close:hover {
-      background-color: rgba(0,0,0,0.02) !important;
-    }
-
-    /* SketchyDivider styles */
-    .sketchy-divider-container {
-      width: 100%; /* 화면 전체 너비로 설정 */
-      padding: 32px 0; /* 상하 여백 */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: transparent; /* 배경 투명 */
-      margin: 0; /* 중앙 정렬을 위해 margin을 0으로 설정 */
-    }
-
-    /* 큰 화면에서 특정 너비로 제한하던 미디어 쿼리 제거 */
-    /* @media (min-width: 1280px) {
-        .sketchy-divider-container {
-            width: 40%;
-            margin: 0 auto;
+        .font-logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
         }
-    } */
-
-    .sketchy-svg-divider {
-      display: block; /* 불필요한 공백 제거 */
-      overflow: visible; /* dasharray가 경계를 넘어갈 수 있도록 */
-      width: 100%; /* SVG 자체 너비를 100%로 설정하여 부모 컨테이너에 맞게 */
-    }
-  </style>
+    </style>
 </head>
-<body>
-  <div id="app"></div>
+<body class="bg-gray-50 text-gray-700">
 
-  <script type="module">
-    const { createApp, ref, computed, watch } = Vue;
-    const { createVuetify } = Vuetify;
-    const { VCard, VCardActions, VCardText, VCardTitle, VCardSubtitle, VImg, VBtn, VChip, VChipGroup, VContainer, VDialog, VIcon, VList, VListItem, VMain, VProgressCircular, VRow, VCol, VApp } = Vuetify.components;
-    const { directives } = Vuetify;
+    <!-- 전체 페이지 컨테이너 -->
+    <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
 
-    // Vuetify 인스턴스 생성
-    const vuetify = createVuetify({
-      components: {
-        VCard, VCardActions, VCardText, VCardTitle, VCardSubtitle, VImg, VBtn, VChip, VChipGroup, VContainer, VDialog, VIcon, VList, VListItem, VMain, VProgressCircular, VRow, VCol, VApp
-      },
-      directives,
-      icons: {
-        defaultSet: 'mdi', // Material Design Icons 사용
-      },
-    });
+        <!-- 헤더: 로고 -->
+        <header class="py-20 sm:py-24 text-center">
+            <h1 class="font-logo text-5xl sm:text-6xl md:text-7xl tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-sky-400">
+                yooosh
+            </h1>
+        </header>
 
-    // SketchyDivider Component
-    const SketchyDivider = {
-      template: `
-        <div class="sketchy-divider-container">
-          <svg width="100%" height="20" class="sketchy-svg-divider">
-            <path
-              :d="svgPath"
-              stroke="#333333"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-dasharray="8 8"
-              fill="none"
-            />
-          </svg>
-        </div>
-      `,
-      setup() {
-        const svgPath = computed(() => {
-          // SVG Path 'd' attribute for a horizontal line with slight irregularities
-          // This creates a slightly "hand-drawn" or "sketchy" feel.
-          // Adjust width to make the dashed line itself longer within the 100% container
-          const width = 2000; // Increase this value to make the SVG path itself longer
-          const height = 20; // Height of the SVG
-          const centerY = height / 2;
-
-          // Simple wavy path
-          let path = `M0,${centerY}`;
-          const numSegments = 40; // Increase number of segments to match the increased width
-          const segmentWidth = width / numSegments;
-
-          for (let i = 0; i <= numSegments; i++) {
-            const x = i * segmentWidth;
-            // Add some randomness to y to make it look less perfect
-            const yOffset = (Math.random() - 0.5) * 5; // -2.5 to 2.5
-            path += `L${x},${centerY + yOffset}`;
-          }
-
-          return path;
-        });
-        return { svgPath };
-      }
-    };
-
-    // ProjectCard Component
-    const ProjectCard = {
-      props: {
-        project: {
-          type: Object,
-          required: true,
-        },
-      },
-      emits: ['view-details'],
-      template: `
-        <v-card
-          class="mx-auto my-4 sketchy-card"
-          :width="cardWidth"
-          @click="emitViewDetails"
-        >
-          <v-img
-            :src="project.image"
-            :alt="project.title"
-            height="200px"
-            cover
-            class="sketchy-image-card"
-          >
-            <template v-slot:placeholder>
-              <div class="d-flex align-center justify-center fill-height">
-                <v-progress-circular
-                  color="grey-lighten-4"
-                  indeterminate
-                ></v-progress-circular>
-              </div>
-            </template>
-          </v-img>
-
-          <v-card-title class="sketchy-text">{{ project.title }}</v-card-title>
-
-          <v-card-subtitle class="sketchy-text mt-1">
-            <v-icon size="small" start>mdi-label</v-icon>
-            {{ project.category }}
-          </v-card-subtitle>
-
-          <v-card-text>
-            <div class="sketchy-text text-body-2 mb-2">{{ project.description }}</div>
-            <div class="text-caption text-medium-emphasis mt-2">
-              <v-icon size="small" start>mdi-tools</v-icon>
-              기술 스택: {{ project.technologies ? project.technologies.join(', ') : '' }}
-            </div>
-          </v-card-text>
-
-          <v-card-actions class="d-flex justify-end pr-4 pb-4">
-            <v-btn
-              variant="text"
-              color="primary"
-              class="sketchy-button-inner"
-              @click.stop="emitViewDetails"
-            >
-              자세히 보기
-              <v-icon end>mdi-information</v-icon>
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      `,
-      setup(props, { emit }) {
-        const emitViewDetails = () => {
-          emit('view-details', props.project);
-        };
-        const cardWidth = computed(() => '100%'); // Responsive width
-        return { emitViewDetails, cardWidth };
-      },
-    };
-
-    // ProjectDetailModal Component
-    const ProjectDetailModal = {
-      props: {
-        showModal: {
-          type: Boolean,
-          required: true,
-        },
-        project: {
-          type: Object,
-          default: null,
-        },
-      },
-      emits: ['close-modal'],
-      template: `
-        <v-dialog
-          v-model="internalShowModal"
-          max-width="800px"
-          scrollable
-          class="sketchy-modal-dialog"
-        >
-          <v-card class="sketchy-modal-card">
-            <v-card-title class="d-flex justify-space-between align-center sketchy-text">
-              <span>{{ project ? project.title : '' }}</span>
-              <v-btn icon @click="closeModal" variant="text" class="sketchy-close-btn">
-                <v-icon>mdi-close</v-icon>
-              </v-btn>
-            </v-card-title>
-
-            <v-card-text class="pa-6" v-if="project">
-              <v-img
-                :src="project.image"
-                :alt="project.title"
-                height="300px"
-                cover
-                class="sketchy-image-modal mb-4"
-              >
-                <template v-slot:placeholder>
-                  <div class="d-flex align-center justify-center fill-height">
-                    <v-progress-circular
-                      color="grey-lighten-4"
-                      indeterminate
-                    ></v-progress-circular>
-                  </div>
-                </template>
-              </v-img>
-
-              <h3 class="text-h6 font-weight-bold mb-2 sketchy-text">프로젝트 개요 및 배경</h3>
-              <div class="body-1 sketchy-text mb-4" v-html="project.details.overview"></div>
-
-              <h3 class="text-h6 font-weight-bold mb-2 sketchy-text mt-4">아키텍처</h3>
-              <div class="body-1 sketchy-text mb-4" v-html="project.details.architecture"></div>
-
-              <h3 class="text-h6 font-weight-bold mb-2 sketchy-text mt-4">나의 목표</h3>
-              <div class="body-1 sketchy-text mb-4" v-html="project.details.goals"></div>
-
-              <h3 class="text-h6 font-weight-bold mb-2 sketchy-text mt-4">문제 해결 과정</h3>
-              <div class="body-1 sketchy-text mb-4" v-html="project.details.problemSolving"></div>
-
-              <h3 class="text-h6 font-weight-bold mb-2 sketchy-text mt-4">배운 점, 아쉬운 점 & 개선 사항</h3>
-              <div class="body-1 sketchy-text mb-4" v-html="project.details.learnings"></div>
-
-              <h3 class="text-h6 font-weight-bold mb-2 sketchy-text mt-4">사용 기술</h3>
-              <v-chip-group class="mb-4">
-                <v-chip
-                  v-for="tech in project.technologies"
-                  :key="tech"
-                  class="ma-1 sketchy-chip"
-                  variant="outlined"
-                >
-                  {{ tech }}
-                </v-chip>
-              </v-chip-group>
-            </v-card-text>
-
-            <v-card-actions class="d-flex justify-end pa-4" v-if="project">
-              <v-btn
-                v-if="project.github"
-                :href="project.github"
-                target="_blank"
-                variant="outlined"
-                class="mr-4 sketchy-button-modal"
-              >
-                <v-icon start>mdi-github</v-icon> GitHub
-              </v-btn>
-              <v-btn
-                v-if="project.demo"
-                :href="project.demo"
-                target="_blank"
-                variant="flat"
-                color="primary"
-                class="sketchy-button-modal sketchy-button-modal--primary"
-              >
-                <v-icon start>mdi-web</v-icon> 데모 보기
-              </v-btn>
-              <v-btn
-                variant="text"
-                class="sketchy-button-modal sketchy-button-modal--close"
-                @click="closeModal"
-              >
-                닫기
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-dialog>
-      `,
-      setup(props, { emit }) {
-        const internalShowModal = ref(props.showModal);
-
-        watch(() => props.showModal, (newVal) => {
-          internalShowModal.value = newVal;
-        });
-
-        watch(internalShowModal, (newVal) => {
-          if (!newVal) {
-            emit('close-modal');
-          }
-        });
-
-        const closeModal = () => {
-          internalShowModal.value = false;
-        };
-        return { internalShowModal, closeModal };
-      },
-    };
-
-    // Main App Component
-    const App = {
-      components: {
-        SketchyDivider,
-        ProjectCard,
-        ProjectDetailModal,
-      },
-      template: `
-        <v-app class="app-background">
-          <v-main>
-            <section id="hero" class="section-container hero-section">
-              <v-container>
-                <div class="text-center my-12">
-                  <h1 class="display-3 font-weight-bold mb-4 sketchy-text">안녕하세요! 저는 유승현입니다.</h1>
-                  <p class="headline sketchy-text">창의적인 아이디어로 디지털 경험을 디자인하고 개발합니다.</p>
-                  <v-btn
-                    class="mt-8 sketchy-button"
-                    variant="outlined"
-                    size="large"
-                    @click="scrollToSection('main-project')"
-                  >
-                    프로젝트 보기
-                    <v-icon end>mdi-arrow-right</v-icon>
-                  </v-btn>
-                </div>
-              </v-container>
-              <SketchyDivider />
+        <main>
+            <!-- 소개 섹션 -->
+            <section class="text-center mb-24 sm:mb-32">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">견고한 아키텍처를 설계하는 백엔드 개발자</h2>
+                <p class="max-w-3xl mx-auto text-base sm:text-lg text-gray-600 leading-relaxed">
+                    안녕하세요. 안정적이고 확장 가능한 시스템을 만드는 것에 열정을 가진 백엔드 개발자 yooosh입니다. 
+                    복잡한 비즈니스 문제를 기술적으로 해결하고, 효율적인 데이터 처리와 최적의 성능을 제공하는 것을 목표로 합니다. 
+                    새로운 기술을 배우고 동료와 지식을 공유하며 함께 성장하는 것을 즐깁니다.
+                </p>
             </section>
 
-            <section id="about" class="section-container about-section">
-              <v-container>
-                <h2 class="display-2 font-weight-bold text-center mb-8 sketchy-text">자기소개</h2>
-                <v-row align="center">
-                  <v-col cols="12" md="6">
-                    <v-img
-                      src="yoo.jpg"
-                      alt="Profile Image"
-                      class="rounded-lg shadow-md sketchy-image"
-                      cover
-                    ></v-img>
-                  </v-col>
-                  <v-col cols="12" md="6">
-                    <p class="body-1 sketchy-text mb-4">
-                      안녕하세요! 저는 유승현입니다. 저는 웹 개발, DevOps, 그리고 데이터 엔지니어링에 깊은 열정을 가지고 있습니다. 사용자 중심의 솔루션을 만들고, 기술을 통해 복잡한 문제를 해결하는 것을 좋아합니다.
-                    </p>
-                    <p class="body-1 sketchy-text mb-4">
-                      저는 Kubernetes, AWS, Ansible, Helm, ELK 스택과 같은 인프라 및 운영 기술에 능숙하며, WEB(Vue + Django, FastAPI), DB(MySQL, PostgreSQL) 개발 경험도 풍부합니다. 또한 Kafka, Flink, Spark, Hadoop, Airflow 등 데이터 엔지니어링 관련 기술을 활용한 경험도 있습니다. 새로운 기술을 배우고 적용하는 데 항상 열려 있으며, 협업을 통해 더 나은 결과를 만들어내는 것을 중요하게 생각합니다.
-                    </p>
-                    <p class="body-1 sketchy-text sketchy-text--last">
-                      이 포트폴리오에서 저의 주요 프로젝트와 사이드 프로젝트들을 확인하실 수 있습니다. 저의 작업물에 관심이 있으시다면 언제든지 연락해주세요!
-                    </p>
-                  </v-col>
-                </v-row>
-              </v-container>
-              <SketchyDivider />
-            </section>
-
-            <section id="main-project" class="section-container featured-projects-section">
-              <v-container>
-                <h2 class="display-2 font-weight-bold text-center mb-8 sketchy-text">대표 프로젝트</h2>
-                <v-card class="mx-auto my-4 sketchy-card">
-                  <v-img
-                    :src="mainProject.image"
-                    :alt="mainProject.title"
-                    height="300px"
-                    cover
-                    class="sketchy-image-modal mb-4"
-                  >
-                    <template v-slot:placeholder>
-                      <div class="d-flex align-center justify-center fill-height">
-                        <v-progress-circular
-                          color="grey-lighten-4"
-                          indeterminate
-                        ></v-progress-circular>
-                      </div>
-                    </template>
-                  </v-img>
-
-                  <v-card-text class="pa-6">
-                    <h3 class="text-h6 font-weight-bold mb-2 sketchy-text">{{ mainProject.title }}</h3>
-                    <p class="body-1 sketchy-text mb-4">{{ mainProject.description }}</p>
-
-                    <h3 class="text-h6 font-weight-bold mb-2 sketchy-text mt-4">프로젝트 개요 및 배경</h3>
-                    <div class="body-1 sketchy-text main-project-details mb-4" v-html="mainProject.details.overview"></div>
-
-                    <h3 class="text-h6 font-weight-bold mb-2 sketchy-text mt-4">아키텍처</h3>
-                    <div class="body-1 sketchy-text main-project-details mb-4" v-html="mainProject.details.architecture"></div>
-
-                    <h3 class="text-h6 font-weight-bold mb-2 sketchy-text mt-4">나의 목표</h3>
-                    <div class="body-1 sketchy-text main-project-details mb-4" v-html="mainProject.details.goals"></div>
-
-                    <h3 class="text-h6 font-weight-bold mb-2 sketchy-text mt-4">문제 해결 과정</h3>
-                    <div class="body-1 sketchy-text main-project-details mb-4" v-html="mainProject.details.problemSolving"></div>
-
-                    <h3 class="text-h6 font-weight-bold mb-2 sketchy-text mt-4">배운 점, 아쉬운 점 & 개선 사항</h3>
-                    <div class="body-1 sketchy-text main-project-details mb-4" v-html="mainProject.details.learnings"></div>
-
-                    <h3 class="text-h6 font-weight-bold mb-2 sketchy-text mt-4">사용 기술</h3>
-                    <v-chip-group class="mb-4">
-                      <v-chip
-                        v-for="tech in mainProject.technologies"
-                        :key="tech"
-                        class="ma-1 sketchy-chip"
-                        variant="outlined"
-                      >
-                        {{ tech }}
-                      </v-chip>
-                    </v-chip-group>
-                  </v-card-text>
-
-                  <v-card-actions class="d-flex justify-end pa-4">
-                    <v-btn
-                      v-if="mainProject.github"
-                      :href="mainProject.github"
-                      target="_blank"
-                      variant="outlined"
-                      class="mr-4 sketchy-button-modal"
-                    >
-                      <v-icon start>mdi-github</v-icon> GitHub
-                    </v-btn>
-                    <v-btn
-                      v-if="mainProject.demo"
-                      :href="mainProject.demo"
-                      target="_blank"
-                      variant="flat"
-                      color="primary"
-                      class="sketchy-button-modal sketchy-button-modal--primary"
-                    >
-                      <v-icon start>mdi-web</v-icon> 데모 보기
-                    </v-btn>
-                  </v-card-actions>
-                </v-card>
-              </v-container>
-              <SketchyDivider />
-            </section>
-
-            <section id="side-projects" class="section-container side-projects-section">
-              <v-container>
-                <h2 class="display-2 font-weight-bold text-center mb-8 sketchy-text">사이드 프로젝트</h2>
-                <div class="horizontal-scroll-container">
-                  <div class="d-flex flex-nowrap">
-                    <div v-for="project in sideProjects" :key="project.id" class="flex-grow-0 flex-shrink-0 project-card-wrapper">
-                      <ProjectCard :project="project" @view-details="openProjectDetail" />
+            <!-- 메인 프로젝트 섹션 -->
+            <section class="mb-24 sm:mb-32">
+                <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">Main Project</h3>
+                <div class="bg-white rounded-xl p-6 sm:p-8 border border-gray-200 shadow-md transition-all duration-300 hover:shadow-lg hover:border-blue-300">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
+                        <h4 class="text-2xl font-bold text-blue-600">AI 기반 GitOps MSA 플랫폼 구축 (예정)</h4>
+                        <span class="text-sm text-gray-500 mt-2 md:mt-0">In Progress</span>
                     </div>
-                  </div>
-                </div>
-              </v-container>
-              <SketchyDivider />
-            </section>
-
-            <section id="contact" class="section-container contact-section">
-              <v-container>
-                <h2 class="display-2 font-weight-bold text-center mb-8 sketchy-text">연락처</h2>
-                <v-row justify="center">
-                  <v-col cols="12" md="8">
-                    <p class="body-1 text-center sketchy-text mb-4">
-                      저의 작업물에 대해 더 자세히 이야기하고 싶으시거나, 함께 협업할 기회가 있다면 언제든지 연락 주세요!
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Kubernetes 환경에서 GitOps(ArgoCD) 파이프라인을 구축하여 MSA 기반의 AI 서비스를 안정적이고 효율적으로 배포 및 운영하는 것을 목표로 하는 프로젝트입니다. CI/CD 자동화를 통해 개발 생산성을 높이고, AI 모델 서빙을 위한 최적의 인프라를 설계하여 대규모 트래픽에 유연하게 대응할 수 있는 시스템을 구축할 예정입니다.
                     </p>
-                    <v-list class="transparent-list sketchy-list">
-                      <v-list-item>
-                        <template v-slot:prepend>
-                          <v-icon>mdi-email</v-icon>
-                        </template>
-                        <v-list-item-title class="sketchy-text">effort-result@naver.com</v-list-item-title>
-                      </v-list-item>
-                      <v-list-item>
-                        <template v-slot:prepend>
-                          <v-icon>mdi-phone</v-icon>
-                        </template>
-                        <v-list-item-title class="sketchy-text">+82) 010-9386-9428</v-list-item-title>
-                      </v-list-item>
-                      <v-list-item href="https://github.com/Yoo-SeungHyeon" target="_blank">
-                        <template v-slot:prepend>
-                          <v-icon>mdi-github</v-icon>
-                        </template>
-                        <v-list-item-title class="sketchy-text">Yoo-SeungHyeon</v-list-item-title>
-                      </v-list-item>
-                    </v-list>
-                  </v-col>
-                </v-row>
-              </v-container>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Kubernetes</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">GitOps</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">ArgoCD</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">MSA</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">AI</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Docker</span>
+                    </div>
+                </div>
             </section>
-          </v-main>
 
-          <ProjectDetailModal
-            :show-modal="isDetailModalOpen"
-            :project="selectedProject"
-            @close-modal="closeProjectDetail"
-          />
-        </v-app>
-      `,
-      setup() {
-        const isDetailModalOpen = ref(false);
-        const selectedProject = ref(null);
+            <!-- 서브 프로젝트 섹션 -->
+            <section class="mb-24 sm:mb-32">
+                <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">Sub Projects</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- SSABAB -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 transition-all duration-300 hover:shadow-md">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">SSABAB</h4>
+                        <p class="text-gray-600 text-sm mb-4">SSAFY 대전 캠퍼스 교육생을 대상으로 금일 메뉴 중 어떤 메뉴가 더 맛있는지 과거 데이터를 기반으로 예측해주는 서비스</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">NextJS</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">SpringBoot</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">MySQL</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">K8s</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Prometheus</span>
+                        </div>
+                    </div>
+                    <!-- Sentifl -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 transition-all duration-300 hover:shadow-md">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Sentifl</h4>
+                        <p class="text-gray-600 text-sm mb-4">BGM 생성 AI 블로그</p>
+                         <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">React</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">SpringBoot</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">FastAPI</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">AWS</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Keras</span>
+                        </div>
+                    </div>
+                    <!-- SSAFYNEWS -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 transition-all duration-300 hover:shadow-md">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">SSAFYNEWS</h4>
+                        <p class="text-gray-600 text-sm mb-4">News를 수집하고 AI를 활용해 사용자 맞춤 추천 및 뉴스 기반 챗봇 서비스</p>
+                         <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Vue.js</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Django</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">PostgreSQL</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Kafka</span>
+                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Ollama</span>
+                        </div>
+                    </div>
+                    <!-- 추후 만들 예정 -->
+                    <div class="bg-white rounded-xl p-6 border-2 border-dashed border-gray-300 flex flex-col items-center justify-center text-center">
+                        <h4 class="text-xl font-bold text-gray-500 mb-2">Next Project</h4>
+                        <p class="text-gray-400 text-sm">새로운 아이디어를 바탕으로 멋진 프로젝트를 구상하고 있습니다. 기대해주세요!</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="mb-24 sm:mb-32">
+                <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">Awards & Certificates</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <h4 class="text-lg font-bold text-gray-800 mb-1">삼성 SW 역량테스트 B형</h4>
+                        <p class="text-gray-500 text-sm">2025.03</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <h4 class="text-lg font-bold text-gray-800 mb-1">빅데이터분석기사</h4>
+                        <p class="text-gray-500 text-sm">2025.07</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <h4 class="text-lg font-bold text-gray-800 mb-1">SQLD</h4>
+                        <p class="text-gray-500 text-sm">2023.12</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border-gray-200">
+                        <h4 class="text-lg font-bold text-gray-800 mb-1">ADsP</h4>
+                        <p class="text-gray-500 text-sm">2024.06</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-gray-200">
+                        <h4 class="text-lg font-bold text-gray-800 mb-1">OPIc - IL</h4>
+                        <p class="text-gray-500 text-sm">2025.05</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">Education & Experience</h3>
+                <div class="space-y-12">
+                    <!-- 경력 항목 1 -->
+                    <div class="relative pl-8 border-l-2 border-gray-300">
+                         <div class="absolute -left-2.5 top-1 w-5 h-5 bg-blue-500 rounded-full border-4 border-white"></div>
+                         <p class="text-sm text-gray-500 mb-1">2025.01 - 현재</p>
+                         <h4 class="text-xl font-bold text-gray-800">삼성 청년 SW 아카데미 (SSAFY) 13기</h4>
+                         <p class="text-gray-600">Python, Django, Vue, Kafka, Flink, Spark, Airflow, Hadoop 등 학습</p>
+                    </div>
+                    <!-- 경력 항목 2 -->
+                    <div class="relative pl-8 border-l-2 border-gray-300">
+                        <div class="absolute -left-2.5 top-1 w-5 h-5 bg-blue-500 rounded-full border-4 border-white"></div>
+                        <p class="text-sm text-gray-500 mb-1">2021.03 - 2025.02</p>
+                        <h4 class="text-xl font-bold text-gray-800">영남대학교 졸업</h4>
+                        <p class="text-gray-600">통계학과 & 컴퓨터공학과 복수전공</p>
+                    </div>
+                     <!-- 경력 항목 3 -->
+                    <div class="relative pl-8 border-l-2 border-gray-300">
+                        <div class="absolute -left-2.5 top-1 w-5 h-5 bg-blue-500 rounded-full border-4 border-white"></div>
+                        <p class="text-sm text-gray-500 mb-1">2022.09 - 2023.07</p>
+                        <h4 class="text-xl font-bold text-gray-800">제 1회 It’s DGB, I’m Challenger</h4>
+                        <p class="text-gray-600">Final Round 진출 (Top 6)</p>
+                    </div>
+                     <!-- 경력 항목 4 -->
+                    <div class="relative pl-8 border-l-2 border-gray-300">
+                        <div class="absolute -left-2.5 top-1 w-5 h-5 bg-blue-500 rounded-full border-4 border-white"></div>
+                        <p class="text-sm text-gray-500 mb-1">2023.02 - 2023.03</p>
+                        <h4 class="text-xl font-bold text-gray-800">메가존클라우드 디지털 인재 양성과정</h4>
+                        <p class="text-gray-600">아이티 평생교육원</p>
+                    </div>
+                     <!-- 경력 항목 5 -->
+                    <div class="relative pl-8 border-l-2 border-gray-300">
+                        <div class="absolute -left-2.5 top-1 w-5 h-5 bg-blue-500 rounded-full border-4 border-white"></div>
+                        <p class="text-sm text-gray-500 mb-1">2022.07 - 2022.11</p>
+                        <h4 class="text-xl font-bold text-gray-800">다양한 IT 교육 이수</h4>
+                        <p class="text-gray-600">SQL, 파이썬 데이터분석/크롤링, NFT/블록체인, 빅데이터/AI 기초 등</p>
+                    </div>
+                </div>
+            </section>
 
-        const allProjects = ref([
-          {
-            id: 1,
-            title: '대표 프로젝트: 스마트 홈 대시보드',
-            category: '웹 개발',
-            image: 'https://placehold.co/600x400/2ecc71/ffffff?text=Smart+Home',
-            description: '스마트 기기들을 한눈에 제어하고 모니터링할 수 있는 반응형 웹 대시보드입니다. Vue.js와 Firebase를 사용하여 실시간 데이터 동기화를 구현했습니다.',
-            details: {
-              overview: `이 프로젝트는 여러 스마트 기기를 효율적으로 관리하고 모니터링하기 위한 통합 대시보드를 구축하는 것을 목표로 했습니다. 기존의 파편화된 앱 대신, 하나의 인터페이스에서 모든 기기 정보를 확인하고 제어할 수 있도록 하여 사용자 편의성을 극대화하고자 했습니다.`,
-              architecture: `프론트엔드는 Vue.js와 Vuetify를 사용하여 반응형 웹 애플리케이션으로 개발되었으며, 백엔드 및 실시간 데이터 동기화는 Firebase Realtime Database와 Cloud Functions를 활용했습니다. 기기 제어 명령은 MQTT 프로토콜을 통해 IoT Hub로 전송되며, 센서 데이터는 스트림 처리 후 Firebase에 저장됩니다.`,
-              goals: `<ul>
-                <li>다양한 스마트 기기(조명, 온도 센서, 보안 카메라 등) 통합 제어</li>
-                <li>실시간 센서 데이터 시각화 및 알림 기능 구현</li>
-                <li>사용자 친화적이고 직관적인 UI/UX 제공</li>
-                <li>확장 가능한 아키텍처 설계</li>
-              </ul>`,
-              problemSolving: `기존 기기들의 상이한 API 연동 문제를 해결하기 위해, 각 기기별 어댑터 패턴을 구현하여 공통 인터페이스를 통해 제어하도록 했습니다. 또한, 대량의 센서 데이터를 효율적으로 처리하고 실시간으로 시각화하기 위해 데이터 파이프라인을 최적화하고, Vue.js의 반응형 특성을 활용하여 UI 업데이트 지연을 최소화했습니다.`,
-              learnings: `이 프로젝트를 통해 복잡한 IoT 시스템의 프론트엔드 및 백엔드 통합 개발 경험을 쌓았습니다. 특히 Firebase의 실시간 데이터 처리 능력과 Cloud Functions를 활용한 서버리스 아키텍처 구축에 대한 이해를 높일 수 있었습니다. 아쉬운 점은 모든 종류의 스마트 기기를 통합하는 데는 한계가 있었으며, 추후 서드파티 기기 연동을 위한 플러그인 아키텍처 도입을 고려해야 할 것 같습니다. 개선 사항으로는 음성 제어 기능 추가 및 AI 기반 자동화 시나리오 구현을 계획하고 있습니다.`
-            },
-            github: 'https://github.com/your-github/project1',
-            demo: 'https://demo.project1.com',
-          },
-          {
-            id: 2,
-            title: '사이드 프로젝트 1: AI 기반 이미지 분류기',
-            category: '머신러닝',
-            image: 'https://placehold.co/600x400/3498db/ffffff?text=AI+Image',
-            description: 'TensorFlow.js를 활용하여 브라우저에서 동작하는 이미지 분류 웹 애플리케이션입니다. 사용자 업로드 이미지를 분석하여 1000가지 객체 중 하나로 분류합니다.',
-            details: {
-              overview: `사용자가 이미지를 업로드하거나 웹캠을 통해 실시간으로 이미지를 입력하면, 브라우저 환경에서 즉시 이미지 내용을 분류하여 결과를 보여주는 웹 애플리케이션입니다. Python 환경에서 학습된 모델을 웹에서 활용하고자 하는 니즈에서 시작되었습니다.`,
-              architecture: `백엔드 없이 순수하게 프론트엔드 (Vue.js)와 TensorFlow.js 라이브러리만을 사용하여 구현되었습니다. Python Keras로 학습된 InceptionV3 모델을 TensorFlow.js Layer API를 사용하여 웹 포맷으로 변환 후, 웹팩을 통해 번들링하여 웹 애플리케이션에 포함시켰습니다. 사용자의 이미지는 HTML Canvas를 통해 처리됩니다.`,
-              goals: `<ul>
-                <li>브라우저 환경에서 머신러닝 모델을 직접 실행하여 빠른 예측 제공</li>
-                <li>이미지 업로드 및 웹캠을 통한 실시간 이미지 분류 기능 구현</li>
-                <li>예측 결과와 확률 분포를 시각적으로 명확하게 표시</li>
-                <li>모델 변환 및 로딩 과정의 최적화</li>
-              </ul>`,
-              problemSolving: `가장 큰 문제는 대용량 모델 파일의 로딩 시간과 초기 로딩 시 사용자 경험 저하였습니다. 이를 해결하기 위해 모델 파일을 여러 청크로 분할하여 필요한 부분만 점진적으로 로드하고, 로딩 중에는 사용자에게 친화적인 로딩 애니메이션을 제공했습니다. 또한, 웹캠 이미지 처리에 WebWorkers를 사용하여 메인 스레드의 부하를 줄였습니다.`,
-              learnings: `TensorFlow.js를 통해 클라이언트 사이드 머신러닝의 가능성을 직접 경험할 수 있었고, 웹 환경에서의 모델 최적화 및 배포 전략에 대해 깊이 이해하게 되었습니다. 하지만 대용량 모델의 경우 여전히 초기 로딩 부담이 존재하며, 웹 어셈블리(WebAssembly)를 활용한 성능 개선 여지가 남아있다고 생각합니다. 향후 다양한 모델 아키텍처를 시도하고, 이미지 전처리 파이프라인을 고도화하여 분류 정확도를 높이는 방향으로 개선하고 싶습니다.`
-            },
-            github: 'https://github.com/your-github/project2',
-            demo: 'https://demo.project2.com',
-          },
-          {
-            id: 3,
-            title: '사이드 프로젝트 2: 비대면 화상 회의 시스템',
-            category: '풀스택 개발',
-            image: 'https://placehold.co/600x400/e74c3c/ffffff?text=Video+Conf',
-            description: 'WebRTC를 사용하여 실시간 음성/영상 통화, 화면 공유, 채팅 기능을 제공하는 풀스택 화상 회의 솔루션입니다. Node.js와 Socket.IO로 서버를 구축했습니다.',
-            details: {
-              overview: `코로나19 팬데믹 이후 비대면 소통의 중요성이 부각됨에 따라, 안정적이고 기능이 풍부한 자체 화상 회의 시스템을 구축하고자 했습니다. 실시간 상호작용과 다양한 협업 기능을 제공하여 원격 근무 및 학습 환경을 지원하는 것이 목표였습니다.`,
-              architecture: `프론트엔드는 React를 사용하여 개발되었으며, 실시간 통신은 WebRTC를 기반으로 합니다. 시그널링 서버는 Node.js와 Socket.IO를 사용하여 구현했으며, MongoDB를 통해 사용자 및 회의방 정보를 관리합니다. STUN/TURN 서버를 구성하여 NAT traversal 문제를 해결하고 P2P 연결을 지원합니다.`,
-              goals: `<ul>
-                <li>실시간 고품질 음성 및 영상 통화 기능 구현</li>
-                <li>화면 공유 및 텍스트 채팅 기능 통합</li>
-                <li>다중 사용자 동시 접속 지원 (최대 8인)</li>
-                <li>보안 강화를 위한 통신 암호화</li>
-              </ul>`,
-              problemSolving: `가장 큰 도전은 WebRTC의 복잡한 연결 과정과 네트워크 환경 변화에 대한 안정성 확보였습니다. 이를 위해 ICE(Interactive Connectivity Establishment) 프로토콜에 대한 깊은 이해를 바탕으로 STUN/TURN 서버를 직접 구축하고 최적화했습니다. 또한, 네트워크 불안정 시 자동으로 비디오 품질을 조절하는 로직을 추가하여 사용자 경험을 개선했습니다.`,
-              learnings: `WebRTC와 실시간 통신 기술의 복잡성을 이해하고 직접 구현해보면서 네트워크, 보안, 멀티미디어 처리 등 다양한 분야에 대한 지식을 넓힐 수 있었습니다. 특히 서버 개발 시 Node.js와 Socket.IO의 강력함을 경험했습니다. 아쉬운 점은 대규모 동시 접속 환경에서의 성능 테스트가 부족했으며, 추후 SFU(Selective Forwarding Unit) 아키텍처를 도입하여 확장성을 개선해야 할 필요성을 느꼈습니다. 향후 회의 녹화, 화이트보드 등 추가 협업 기능 통합을 고려하고 있습니다.`
-            },
-            github: 'https://github.com/your-github/project3',
-            demo: 'https://demo.project3.com',
-          },
-          {
-            id: 4,
-            title: '사이드 프로젝트 3: 나만의 레시피 북 앱',
-            category: '모바일 앱 (웹뷰)',
-            image: 'https://placehold.co/600x400/9b59b6/ffffff?text=Recipe+App',
-            description: '사용자가 자신만의 레시피를 등록하고 관리할 수 있는 모바일 반응형 웹 앱입니다. Vue.js와 IndexedDB를 사용하여 로컬에 데이터를 저장합니다.',
-            details: {
-              overview: `개인 요리 애호가를 위한 모바일 우선 반응형 웹 애플리케이션입니다. 사용자가 자신만의 레시피를 손쉽게 추가, 편집, 검색하고 관리할 수 있도록 설계되었습니다. 인터넷 연결이 없는 환경에서도 사용 가능한 오프라인 기능을 중요하게 고려했습니다.`,
-              architecture: `프론트엔드는 Vue.js로 개발되었으며, Vuetify를 사용하여 모바일 환경에 최적화된 UI를 구현했습니다. 데이터 저장은 클라이언트 측 브라우저 저장소인 IndexedDB를 활용하여 서버 없이도 모든 레시피 정보를 로컬에 안전하게 저장합니다. 서비스 워커를 통해 PWA(Progressive Web App)로 배포되어 오프라인 접속 및 설치 기능을 제공합니다.`,
-              goals: `<ul>
-                <li>사용자 친화적인 레시피 추가/편집 인터페이스 제공</li>
-                <li>재료, 카테고리 등 다양한 기준으로 레시피 검색 및 필터링 기능 구현</li>
-                <li>오프라인에서도 모든 레시피 정보에 접근 가능하도록 구현</li>
-                <li>간편한 식료품 목록 생성 기능 추가</li>
-              </ul>`,
-              problemSolving: `주요 과제는 복잡한 레시피 데이터를 IndexedDB에 효율적으로 저장하고 관리하는 것이었습니다. Nested Object 형태의 레시피 데이터를 Flattening하여 저장하고, 트랜잭션 관리를 통해 데이터 무결성을 확보했습니다. 또한, 이미지 파일을 Blob 형태로 IndexedDB에 저장하여 오프라인에서도 이미지가 정상적으로 로드되도록 처리했습니다.`,
-              learnings: `클라이언트 사이드 데이터베이스인 IndexedDB의 활용법과 PWA 기술을 통한 웹 애플리케이션의 오프라인 기능 구현에 대한 실질적인 경험을 얻었습니다. 서버리스 아키텍처의 장점을 체감하며, 사용자 경험 중심의 프론트엔드 개발에 더욱 집중할 수 있었습니다. 아쉬운 점은 클라우드 동기화 기능이 없어 여러 기기에서 접근이 어렵다는 점입니다. 향후 Firebase나 다른 BaaS(Backend as a Service) 솔루션을 통합하여 데이터 동기화 기능을 추가하고 싶습니다.`
-            },
-            github: 'https://github.com/your-github/side-project1',
-          },
-          {
-            id: 5,
-            title: '사이드 프로젝트 4: 인터랙티브 데이터 시각화',
-            category: '데이터 시각화',
-            image: 'https://placehold.co/600x400/f1c40f/ffffff?text=Data+Viz',
-            description: 'D3.js를 사용하여 복잡한 데이터를 인터랙티브하게 시각화하는 웹 페이지입니다. 실시간 데이터 스트림을 그래프와 차트로 표현합니다.',
-            details: {
-              overview: `다양한 형태의 복잡한 데이터를 사용자가 직관적으로 이해할 수 있도록 인터랙티브한 그래프와 차트 형태로 시각화하는 웹 프로젝트입니다. 특히 실시간으로 업데이트되는 데이터를 효율적으로 처리하고 시각화하는 데 중점을 두었습니다.`,
-              architecture: `Vue.js를 프레임워크로 사용하고, 실제 데이터 시각화는 D3.js 라이브러리를 통해 SVG 요소들을 직접 조작하여 구현했습니다. 백엔드로부터 WebSocket을 통해 실시간 데이터를 수신하며, Vue의 반응형 시스템과 D3의 데이터 바인딩 기능을 결합하여 데이터 변경 시 차트가 자동으로 업데이트되도록 설계했습니다.`,
-              goals: `<ul>
-                <li>막대 차트, 선 차트, 파이 차트, 산점도 등 다양한 차트 유형 구현</li>
-                <li>데이터 범위 선택, 툴팁 표시, 확대/축소 등 사용자 인터랙션 기능 제공</li>
-                <li>실시간 데이터 스트림을 시각화하고 성능 저하 없이 업데이트</li>
-                <li>재사용 가능한 차트 컴포넌트 개발</li>
-              </ul>`,
-              problemSolving: `가장 큰 과제는 대량의 실시간 데이터가 업데이트될 때 발생하는 렌더링 성능 문제였습니다. 이를 해결하기 위해 D3의 ` + '`exit()`' + `와 ` + '`update()`' + ` 패턴을 적극적으로 활용하여 불필요한 DOM 조작을 최소화하고, 웹 애니메이션 API를 사용하여 부드러운 전환 효과를 구현했습니다. 또한, 차트의 반응형 디자인을 위해 SVG 뷰박스(viewBox)와 CSS를 효과적으로 결합했습니다.`,
-              learnings: `D3.js를 깊이 있게 다루면서 데이터-시각화의 근본적인 원리와 SVG 기반의 그래픽스 프로그래밍에 대한 이해를 높일 수 있었습니다. 특히 복잡한 데이터 변환 및 스케일링, 그리고 인터랙션 로직 구현에서 많은 것을 배웠습니다. 아쉬운 점은 데이터의 종류가 많아질수록 커스터마이징의 복잡도가 증가한다는 점입니다. 향후 Vega-Lite와 같은 선언형 시각화 라이브러리와의 통합을 통해 개발 효율성을 높이는 방법을 연구하고 싶습니다.`
-            },
-            github: 'https://github.com/your-github/project2',
-          },
-          {
-            id: 6,
-            title: '사이드 프로젝트 5: 투두 리스트 웹 컴포넌트',
-            category: '웹 컴포넌트',
-            image: 'https://placehold.co/600x400/1abc9c/ffffff?text=Todo+Comp',
-            description: '재사용 가능한 투두 리스트 웹 컴포넌트를 Vanilla JavaScript와 Shadow DOM으로 만들었습니다. 어떤 프레임워크에서도 쉽게 통합할 수 있습니다.',
-            details: {
-              overview: `다양한 웹 프로젝트에서 재사용할 수 있는 독립적인 투두 리스트 컴포넌트입니다. 특정 프레임워크에 종속되지 않고 Vanilla JavaScript와 Web Components 표준을 사용하여, 어떤 웹 환경에서도 쉽게 삽입하고 사용할 수 있도록 개발되었습니다.`,
-              architecture: `HTML ` + '`<template>`' + `, ` + '`<slot>`' + `, Shadow DOM, Custom Elements API 등 웹 컴포넌트 표준 기술만을 사용하여 구현했습니다. 컴포넌트의 스타일은 Shadow DOM 내부에 캡슐화되어 외부 CSS와 충돌하지 않도록 했으며, 데이터는 Local Storage를 활용하여 브라우저에 영구 저장됩니다.`,
-              goals: `<ul>
-                <li>프레임워크 비종속적인 재사용 가능한 투두 리스트 컴포넌트 개발</li>
-                <li>캡슐화된 스타일과 DOM을 통해 외부 환경과의 격리 보장</li>
-                <li>할 일 추가, 삭제, 완료 상태 변경 기능 구현</li>
-                <li>Local Storage를 활용한 데이터 영구 저장</li>
-              </ul>`,
-              problemSolving: `가장 큰 과제는 Web Components의 생명주기(Lifecycle)와 Shadow DOM의 이벤트 버블링을 올바르게 이해하고 적용하는 것이었습니다. 특히 Shadow DOM 내부에서 발생한 이벤트를 외부로 전달하고, 외부에서 전달된 속성(Attributes) 변화를 감지하여 컴포넌트 상태를 업데이트하는 로직 구현에 집중했습니다.`,
-              learnings: `웹 컴포넌트의 강력한 캡슐화와 재사용성을 직접 경험하면서, 모던 웹 개발에서 프레임워크를 넘어서는 컴포넌트의 중요성을 깨달았습니다. Vanilla JavaScript만으로 복잡한 UI 컴포넌트를 만들 수 있다는 자신감을 얻었습니다. 아쉬운 점은 웹 컴포넌트의 상태 관리 방식이 복잡해질수록 코드 구조가 비대해질 수 있다는 점입니다. 향후 LitElement와 같은 경량 라이브러리를 사용하여 개발 생산성을 높이는 방법을 고려해볼 예정입니다.`
-            },
-            github: 'https://github.com/your-github/side-project3',
-          },
-        ]);
+        </main>
 
-        const mainProject = computed(() => allProjects.value[0]); // 첫 번째 프로젝트를 대표 프로젝트로
-        const sideProjects = computed(() => allProjects.value.slice(1)); // 나머지 프로젝트를 사이드 프로젝트로
+        <!-- 푸터 -->
+        <footer class="text-center py-16 mt-24 sm:mt-32">
+            <p class="text-sm text-gray-500">
+                &copy; 2025 yooosh. All Rights Reserved.
+            </p>
+        </footer>
+    </div>
 
-        const openProjectDetail = (project) => {
-          selectedProject.value = project;
-          isDetailModalOpen.value = true;
-        };
-
-        const closeProjectDetail = () => {
-          isDetailModalOpen.value = false;
-          selectedProject.value = null;
-        };
-
-        const scrollToSection = (id) => {
-          const element = document.getElementById(id);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }
-        };
-
-        return {
-          isDetailModalOpen,
-          selectedProject,
-          mainProject, // 변경된 부분
-          sideProjects,
-          openProjectDetail,
-          closeProjectDetail,
-          scrollToSection,
-        };
-      },
-    };
-
-    // Vue 앱 생성 및 Vuetify 플러그인 사용
-    const app = createApp(App);
-    app.use(vuetify);
-
-    // 앱 마운트
-    app.mount('#app');
-  </script>
 </body>
 </html>
