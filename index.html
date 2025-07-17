@@ -20,6 +20,7 @@
         body {
             font-family: 'Noto Sans KR', 'Poppins', sans-serif;
             scroll-behavior: smooth;
+            background-color: #f8fafc; /* bg-slate-50 */
         }
         .font-logo {
             font-family: 'Poppins', sans-serif;
@@ -32,20 +33,37 @@
             border-bottom-width: 4px;
             border-color: #60a5fa; /* blue-400 */
         }
-        /* 카드 호버 효과 */
+        /* 카드 호버 효과 (Glassmorphism) */
         .card-hover {
             transition: all 0.3s ease-in-out;
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         .card-hover:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        /* 파티클 캔버스 스타일 */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-700">
+<body class="text-slate-700">
+
+    <!-- Particle Network Background -->
+    <canvas id="particle-canvas"></canvas>
 
     <!-- 전체 페이지 컨테이너 -->
-    <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10">
 
         <!-- 히어로 섹션: 로고 & 소개 -->
         <section class="text-center py-20 sm:py-28">
@@ -66,27 +84,23 @@
             <!-- 메인 프로젝트 섹션 -->
             <section id="main-project" class="mb-28 sm:mb-36">
                 <h3 class="text-3xl font-bold text-slate-900 text-center mb-16 section-title">Main Project</h3>
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-lg card-hover overflow-hidden cursor-pointer" onclick="location.href='live-casting.html'">
+                <div class="rounded-2xl shadow-lg card-hover overflow-hidden cursor-pointer" onclick="location.href='live-casting.html'">
                     <img class="w-full h-auto md:h-96 object-cover" src="https://placehold.co/1200x600/e0f2fe/0ea5e9?text=Live-Casting" alt="Live-Casting Project Thumbnail">
                     <div class="p-8 sm:p-10">
                         <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
                             <h4 class="text-2xl font-bold text-blue-600">Live-Casting (라이브캐스팅)</h4>
-                            <span class="text-sm font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full mt-2 md:mt-0">Planning</span>
+                            <span class="text-sm font-semibold text-slate-500 bg-slate-200/50 px-3 py-1 rounded-full mt-2 md:mt-0">Planning</span>
                         </div>
                         <p class="text-slate-600 mb-8 leading-relaxed">
                             크리에이터가 팬들과 실시간으로 소통하며 자신의 상품을 판매하고, 특별 이벤트를 통해 팬덤을 강화할 수 있는 MSA 기반의 인터랙티브 방송 플랫폼입니다. 실시간 채팅, 좋아요, 구독, 선착순 이벤트 등의 기능을 통해 크리에이터와 팬들이 더욱 밀접하게 연결될 수 있도록 설계된 플랫폼입니다.
                         </p>
                         <div class="flex flex-wrap gap-3">
-                            <!-- Back-end Tags -->
                             <span class="bg-sky-100 text-sky-800 text-sm font-medium px-4 py-1.5 rounded-full">Spring Boot</span>
-                            <!-- Front-end Tags -->
                             <span class="bg-teal-100 text-teal-800 text-sm font-medium px-4 py-1.5 rounded-full">React</span>
-                            <!-- Infra Tags -->
                             <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-1.5 rounded-full">MSA</span>
                             <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-1.5 rounded-full">Kubernetes</span>
                             <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-1.5 rounded-full">Kafka</span>
                             <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-1.5 rounded-full">WebSocket</span>
-                            <!-- DB Tags -->
                             <span class="bg-amber-100 text-amber-800 text-sm font-medium px-4 py-1.5 rounded-full">Redis</span>
                         </div>
                     </div>
@@ -97,8 +111,7 @@
             <section id="side-projects" class="mb-28 sm:mb-36">
                 <h3 class="text-3xl font-bold text-slate-900 text-center mb-16 section-title">Side Projects</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Project Card: Sentifl -->
-                    <div class="bg-white rounded-xl border border-slate-200 shadow-md card-hover overflow-hidden cursor-pointer" onclick="location.href='sentifl.html'">
+                    <div class="rounded-xl shadow-md card-hover overflow-hidden cursor-pointer" onclick="location.href='sentifl.html'">
                         <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/f3e8ff/8b5cf6?text=Sentifl" alt="Sentifl Project Thumbnail">
                         <div class="p-6">
                             <h4 class="text-xl font-bold text-slate-800 mb-2">Sentifl</h4>
@@ -112,8 +125,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Project Card: SSAFYNEWS -->
-                    <div class="bg-white rounded-xl border border-slate-200 shadow-md card-hover overflow-hidden cursor-pointer" onclick="location.href='ssafynews.html'">
+                    <div class="rounded-xl shadow-md card-hover overflow-hidden cursor-pointer" onclick="location.href='ssafynews.html'">
                         <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/dcfce7/16a34a?text=SSAFYNEWS" alt="SSAFYNEWS Project Thumbnail">
                         <div class="p-6">
                             <h4 class="text-xl font-bold text-slate-800 mb-2">SSAFYNEWS</h4>
@@ -127,8 +139,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Project Card: 균열 탐지 AI 모듈 -->
-                    <div class="bg-white rounded-xl border border-slate-200 shadow-md card-hover overflow-hidden cursor-pointer" onclick="location.href='crack-detection.html'">
+                    <div class="rounded-xl shadow-md card-hover overflow-hidden cursor-pointer" onclick="location.href='crack-detection.html'">
                         <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/fee2e2/ef4444?text=Crack+Detection" alt="Crack Detection AI Project Thumbnail">
                         <div class="p-6">
                             <h4 class="text-xl font-bold text-slate-800 mb-2">균열 탐지 AI 모듈</h4>
@@ -141,8 +152,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Project Card: SSABAB -->
-                    <div class="bg-white rounded-xl border border-slate-200 shadow-md card-hover overflow-hidden cursor-pointer" onclick="location.href='ssabab.html'">
+                    <div class="rounded-xl shadow-md card-hover overflow-hidden cursor-pointer" onclick="location.href='ssabab.html'">
                         <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/ffedd5/f97316?text=SSABAB" alt="SSABAB Project Thumbnail">
                         <div class="p-6">
                             <h4 class="text-xl font-bold text-slate-800 mb-2">SSABAB</h4>
@@ -163,33 +173,31 @@
             <section id="toy-projects" class="mb-28 sm:mb-36">
                 <h3 class="text-3xl font-bold text-slate-900 text-center mb-16 section-title">Toy Projects</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Web Toy Projects -->
-                    <div class="bg-white rounded-xl border border-slate-200 shadow-md card-hover cursor-pointer overflow-hidden" onclick="location.href='toy-web.html'">
-                        <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/e0f2fe/0ea5e9?text=Web+Projects" alt="Web Projects Thumbnail">
+                    <div class="rounded-xl shadow-md card-hover overflow-hidden cursor-pointer" onclick="location.href='toy-web.html'">
+                        <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/dbeafe/2563eb?text=Web+Projects" alt="Web Projects Thumbnail">
                         <div class="p-6">
-                            <h4 class="text-xl font-bold text-slate-800 mb-2 text-center">Web Projects</h4>
-                            <p class="text-slate-600 text-sm mb-4 text-center">웹 개발 기술 연습을 위한 소규모 프로젝트 모음</p>
-                        <div class="flex flex-wrap justify-center gap-2">
-                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Todo App</span>
-                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Auth System</span>
-                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Blog</span>
-                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Board</span>
-                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Shop</span>
-                        </div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Web Projects</h4>
+                            <p class="text-slate-600 text-sm mb-4">웹 개발 기술 연습을 위한 소규모 프로젝트 모음</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Todo App</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Auth System</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Blog</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Board</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Shop</span>
+                            </div>
                         </div>
                     </div>
-                    <!-- AI Toy Projects -->
-                    <div class="bg-white rounded-xl border border-slate-200 shadow-md card-hover cursor-pointer overflow-hidden" onclick="location.href='toy-ai.html'">
+                    <div class="rounded-xl shadow-md card-hover overflow-hidden cursor-pointer" onclick="location.href='toy-ai.html'">
                         <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/f3e8ff/8b5cf6?text=AI+Projects" alt="AI Projects Thumbnail">
                         <div class="p-6">
-                            <h4 class="text-xl font-bold text-slate-800 mb-2 text-center">AI Projects</h4>
-                            <p class="text-slate-600 text-sm mb-4 text-center">AI/ML 기술 학습 및 실습을 위한 프로젝트 모음</p>
-                        <div class="flex flex-wrap justify-center gap-2">
-                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-1 rounded-full">ML/DL</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-1 rounded-full">CV</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-1 rounded-full">NLP</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-1 rounded-full">Recommendation</span>
-                        </div>
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">AI Projects</h4>
+                            <p class="text-slate-600 text-sm mb-4">AI/ML 기술 학습 및 실습을 위한 프로젝트 모음</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-1 rounded-full">ML/DL</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-1 rounded-full">CV</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-1 rounded-full">NLP</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-1 rounded-full">Recommendation</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -199,35 +207,35 @@
             <section id="awards" class="mb-28 sm:mb-36">
                 <h3 class="text-3xl font-bold text-slate-900 text-center mb-16 section-title">Awards & Certificates</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-white rounded-xl p-6 border border-slate-200 card-hover flex items-center space-x-4">
+                    <div class="rounded-xl p-6 card-hover flex items-center space-x-4">
                         <i data-feather="award" class="w-8 h-8 text-amber-500"></i>
                         <div>
                             <h4 class="text-lg font-bold text-slate-800">삼성 SW 역량테스트 B형</h4>
                             <p class="text-slate-500 text-sm">2025.03</p>
                         </div>
                     </div>
-                    <div class="bg-white rounded-xl p-6 border border-slate-200 card-hover flex items-center space-x-4">
+                    <div class="rounded-xl p-6 card-hover flex items-center space-x-4">
                         <i data-feather="award" class="w-8 h-8 text-amber-500"></i>
                         <div>
                             <h4 class="text-lg font-bold text-slate-800">빅데이터분석기사</h4>
                             <p class="text-slate-500 text-sm">2025.07</p>
                         </div>
                     </div>
-                    <div class="bg-white rounded-xl p-6 border border-slate-200 card-hover flex items-center space-x-4">
+                    <div class="rounded-xl p-6 card-hover flex items-center space-x-4">
                         <i data-feather="award" class="w-8 h-8 text-amber-500"></i>
                         <div>
                             <h4 class="text-lg font-bold text-slate-800">SQLD</h4>
                             <p class="text-slate-500 text-sm">2023.12</p>
                         </div>
                     </div>
-                    <div class="bg-white rounded-xl p-6 border border-slate-200 card-hover flex items-center space-x-4">
+                    <div class="rounded-xl p-6 card-hover flex items-center space-x-4">
                         <i data-feather="award" class="w-8 h-8 text-amber-500"></i>
                         <div>
                             <h4 class="text-lg font-bold text-slate-800">ADsP</h4>
                             <p class="text-slate-500 text-sm">2024.06</p>
                         </div>
                     </div>
-                    <div class="bg-white rounded-xl p-6 border border-slate-200 card-hover flex items-center space-x-4">
+                    <div class="rounded-xl p-6 card-hover flex items-center space-x-4">
                         <i data-feather="award" class="w-8 h-8 text-amber-500"></i>
                         <div>
                             <h4 class="text-lg font-bold text-slate-800">OPIc - IL</h4>
@@ -241,8 +249,7 @@
             <section id="history" class="mb-28 sm:mb-36">
                 <h3 class="text-3xl font-bold text-slate-900 text-center mb-16 section-title">Education & Experience</h3>
                 <div class="relative max-w-2xl mx-auto">
-                    <div class="absolute left-3 sm:left-1/2 w-1 h-full bg-slate-200 -translate-x-1/2"></div>
-                    <!-- Timeline Item -->
+                    <div class="absolute left-3 sm:left-1/2 w-1 h-full bg-slate-200/70 -translate-x-1/2"></div>
                     <div class="relative group">
                         <div class="absolute left-3 sm:left-1/2 w-6 h-6 bg-white rounded-full -translate-x-1/2 mt-2 border-4 border-blue-500 transition-all duration-300 group-hover:bg-blue-500"></div>
                         <div class="p-6 rounded-xl sm:ml-[55%] sm:pl-10">
@@ -251,7 +258,6 @@
                             <p class="text-slate-600">Python, Django, Vue, Kafka, Flink, Spark, Airflow, Hadoop 등 학습</p>
                         </div>
                     </div>
-                    <!-- Timeline Item -->
                     <div class="relative group">
                         <div class="absolute left-3 sm:left-1/2 w-6 h-6 bg-white rounded-full -translate-x-1/2 mt-2 border-4 border-blue-500 transition-all duration-300 group-hover:bg-blue-500"></div>
                         <div class="p-6 rounded-xl sm:text-right sm:mr-[55%] sm:pr-10">
@@ -260,7 +266,6 @@
                             <p class="text-slate-600">통계학과 & 컴퓨터공학과 복수전공</p>
                         </div>
                     </div>
-                     <!-- Timeline Item -->
                     <div class="relative group">
                         <div class="absolute left-3 sm:left-1/2 w-6 h-6 bg-white rounded-full -translate-x-1/2 mt-2 border-4 border-blue-500 transition-all duration-300 group-hover:bg-blue-500"></div>
                         <div class="p-6 rounded-xl sm:ml-[55%] sm:pl-10">
@@ -269,7 +274,6 @@
                             <p class="text-slate-600">Final Round 진출 (Top 6)</p>
                         </div>
                     </div>
-                    <!-- Timeline Item -->
                     <div class="relative group">
                         <div class="absolute left-3 sm:left-1/2 w-6 h-6 bg-white rounded-full -translate-x-1/2 mt-2 border-4 border-blue-500 transition-all duration-300 group-hover:bg-blue-500"></div>
                         <div class="p-6 rounded-xl sm:text-right sm:mr-[55%] sm:pr-10">
@@ -284,34 +288,30 @@
             <!-- Contact 섹션 -->
             <section id="contact">
                 <h3 class="text-3xl font-bold text-slate-900 text-center mb-16 section-title">Contact</h3>
-                <div class="bg-white max-w-lg mx-auto rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-xl">
+                <div class="max-w-lg mx-auto rounded-2xl p-8 sm:p-10 shadow-xl card-hover">
                     <div class="space-y-6">
-                        <!-- Contact Item -->
                         <a href="mailto:effort-result@naver.com" class="flex items-center space-x-4 group">
-                            <div class="bg-slate-100 p-3 rounded-full group-hover:bg-blue-100 transition-colors">
+                            <div class="bg-slate-200/50 p-3 rounded-full group-hover:bg-blue-100 transition-colors">
                                 <i data-feather="mail" class="w-6 h-6 text-slate-500 group-hover:text-blue-600"></i>
                             </div>
                             <span class="text-slate-700 group-hover:text-blue-600 transition-colors">effort-result@naver.com</span>
                         </a>
-                        <!-- Contact Item -->
                         <div class="flex items-center space-x-4">
-                            <div class="bg-slate-100 p-3 rounded-full">
+                            <div class="bg-slate-200/50 p-3 rounded-full">
                                 <i data-feather="phone" class="w-6 h-6 text-slate-500"></i>
                             </div>
                             <span class="text-slate-700">010-9386-9428</span>
                         </div>
-                        <!-- Contact Item -->
                         <a href="https://github.com/Yoo-SeungHyeon" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-4 group">
-                            <div class="bg-slate-100 p-3 rounded-full group-hover:bg-blue-100 transition-colors">
+                            <div class="bg-slate-200/50 p-3 rounded-full group-hover:bg-blue-100 transition-colors">
                                 <i data-feather="github" class="w-6 h-6 text-slate-500 group-hover:text-blue-600"></i>
                             </div>
                             <span class="text-slate-700 group-hover:text-blue-600 transition-colors">github.com/Yoo-SeungHyeon</span>
                         </a>
-                        <!-- Contact Item -->
                         <a href="https://velog.io/@yoo-seunghyeon" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-4 group">
-                             <div class="bg-slate-100 p-3 rounded-full group-hover:bg-blue-100 transition-colors">
-                                <i data-feather="edit-3" class="w-6 h-6 text-slate-500 group-hover:text-blue-600"></i>
-                            </div>
+                             <div class="bg-slate-200/50 p-3 rounded-full group-hover:bg-blue-100 transition-colors">
+                                 <i data-feather="edit-3" class="w-6 h-6 text-slate-500 group-hover:text-blue-600"></i>
+                             </div>
                             <span class="text-slate-700 group-hover:text-blue-600 transition-colors">velog.io/@yoo-seunghyeon</span>
                         </a>
                     </div>
@@ -320,7 +320,7 @@
         </main>
 
         <!-- 푸터 -->
-        <footer class="text-center py-16 mt-28 sm:mt-36 border-t border-slate-200">
+        <footer class="text-center py-16 mt-28 sm:mt-36 border-t border-slate-200/70">
             <p class="text-sm text-slate-500">
                 &copy; 2025 yooosh. All Rights Reserved.
             </p>
@@ -330,6 +330,167 @@
     <script>
         // Feather 아이콘 초기화
         feather.replace();
+
+        // 파티클 네트워크 애니메이션 스크립트
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let particlesArray;
+
+        // 마우스 위치 객체
+        const mouse = {
+            x: null,
+            y: null,
+            radius: 150
+        }
+
+        window.addEventListener('mousemove', function(event) {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+        
+        // 캔버스 크기 설정
+        function setCanvasSize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        setCanvasSize();
+
+        // 파티클 클래스
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+                // [수정] 파티클이 속한 영역(zone)을 지정합니다. (left or right)
+                this.zone = (x < canvas.width / 2) ? 'left' : 'right';
+            }
+            // 파티클 그리기
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+            // 파티클 위치 업데이트
+            update() {
+                // [수정] 경계 확인 로직 변경
+                // 세로 경계 확인 (상하)
+                if (this.y > canvas.height || this.y < 0) {
+                    this.directionY = -this.directionY;
+                }
+                // 가로 경계 확인 (좌우) - 영역(zone)에 따라 다르게 적용
+                if (this.zone === 'left') {
+                    if (this.x < 0 || this.x > canvas.width * 0.2) {
+                        this.directionX = -this.directionX;
+                    }
+                } else { // 'right' zone
+                    if (this.x < canvas.width * 0.8 || this.x > canvas.width) {
+                        this.directionX = -this.directionX;
+                    }
+                }
+
+                // 마우스 충돌 감지
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx*dx + dy*dy);
+                if (distance < mouse.radius + this.size){
+                    if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
+                        this.x += 5;
+                    }
+                    if (mouse.x > this.x && this.x > this.size * 10) {
+                        this.x -= 5;
+                    }
+                    if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
+                        this.y += 5;
+                    }
+                    if (mouse.y > this.y && this.y > this.size * 10) {
+                        this.y -= 5;
+                    }
+                }
+                // 파티클 이동
+                this.x += this.directionX;
+                this.y += this.directionY;
+                // 파티클 그리기
+                this.draw();
+            }
+        }
+
+        // 파티클 생성
+        function init() {
+            particlesArray = [];
+            // [수정] 파티클 생성 영역이 줄었으므로(40%), 파티클 개수도 비례하여 조정합니다.
+            let numberOfParticles = (canvas.height * canvas.width * 0.4) / 9000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2) + 1;
+                
+                // [수정] 파티클을 좌우 20% 영역에만 생성합니다.
+                let x;
+                if (Math.random() < 0.5) {
+                    // 왼쪽 영역 (0% ~ 20%)
+                    x = Math.random() * (canvas.width * 0.2);
+                } else {
+                    // 오른쪽 영역 (80% ~ 100%)
+                    x = Math.random() * (canvas.width * 0.2) + (canvas.width * 0.8);
+                }
+                
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * .4) - .2;
+                let directionY = (Math.random() * .4) - .2;
+                let color = 'rgba(148, 163, 184, 0.5)'; // slate-400 with opacity
+
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+        // 파티클 연결선 그리기
+        function connect() {
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+                                 + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                    if (distance < (canvas.width/7) * (canvas.height/7)) {
+                        opacityValue = 1 - (distance/20000);
+                        ctx.strokeStyle = `rgba(148, 163, 184, ${opacityValue})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        // 애니메이션 루프
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+            connect();
+        }
+        
+        // 창 크기 변경 시 캔버스 리사이즈 및 파티클 재생성
+        window.addEventListener('resize', function(){
+            setCanvasSize();
+            init();
+        });
+
+        // 마우스가 캔버스 밖으로 나가면 마우스 위치 초기화
+        window.addEventListener('mouseout', function(){
+            mouse.x = undefined;
+            mouse.y = undefined;
+        })
+
+        init();
+        animate();
     </script>
 </body>
 </html>
