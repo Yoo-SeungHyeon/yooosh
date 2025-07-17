@@ -8,279 +8,322 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Poppins -->
+    <!-- Google Fonts: Poppins & Noto Sans KR -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
     
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Noto Sans KR', 'Poppins', sans-serif;
+            scroll-behavior: smooth;
         }
         .font-logo {
             font-family: 'Poppins', sans-serif;
             font-weight: 800;
         }
+        /* 섹션 제목 밑줄 스타일 */
+        .section-title {
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            border-bottom-width: 4px;
+            border-color: #60a5fa; /* blue-400 */
+        }
+        /* 카드 호버 효과 */
+        .card-hover {
+            transition: all 0.3s ease-in-out;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-700">
+<body class="bg-slate-50 text-slate-700">
 
     <!-- 전체 페이지 컨테이너 -->
-    <div class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
 
-        <!-- 헤더: 로고 -->
-        <header class="py-20 sm:py-24 text-center">
-            <h1 class="font-logo text-5xl sm:text-6xl md:text-7xl tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-sky-400">
+        <!-- 히어로 섹션: 로고 & 소개 -->
+        <section class="text-center py-20 sm:py-28">
+            <h1 class="font-logo text-6xl sm:text-7xl md:text-8xl tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-400">
                 yooosh
             </h1>
-        </header>
-
-        <main>
-            <!-- 소개 섹션 -->
-            <section class="text-center mb-24 sm:mb-32">
-                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">견고한 아키텍처를 설계하는 백엔드 개발자</h2>
-                <p class="max-w-3xl mx-auto text-base sm:text-lg text-gray-600 leading-relaxed">
+            <div class="mt-12 max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">견고한 아키텍처를 설계하는 백엔드 개발자</h2>
+                <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
                     안녕하세요. 안정적이고 확장 가능한 시스템을 만드는 것에 열정을 가진 백엔드 개발자 yooosh입니다. 
                     복잡한 비즈니스 문제를 기술적으로 해결하고, 효율적인 데이터 처리와 최적의 성능을 제공하는 것을 목표로 합니다. 
                     새로운 기술을 배우고 동료와 지식을 공유하며 함께 성장하는 것을 즐깁니다.
                 </p>
-            </section>
+            </div>
+        </section>
 
+        <main>
             <!-- 메인 프로젝트 섹션 -->
-            <section class="mb-24 sm:mb-32">
-                <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">Main Project</h3>
-                <div class="bg-white rounded-xl p-6 sm:p-8 border border-gray-200 shadow-md transition-all duration-300 hover:shadow-lg hover:border-blue-300 cursor-pointer" onclick="location.href='live-casting.html'">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
-                        <h4 class="text-2xl font-bold text-blue-600">Live-Casting (라이브캐스팅)</h4>
-                        <span class="text-sm text-gray-500 mt-2 md:mt-0">Planning</span>
-                    </div>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        크리에이터가 팬들과 실시간으로 소통하며 자신의 상품을 판매하고, 특별 이벤트를 통해 팬덤을 강화할 수 있는 MSA 기반의 인터랙티브 방송 플랫폼입니다. 실시간 채팅, 좋아요, 구독, 선착순 이벤트 등의 기능을 통해 크리에이터와 팬들이 더욱 밀접하게 연결될 수 있도록 설계된 플랫폼입니다.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Spring Boot</span>
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">React</span>
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">MSA</span>
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Kubernetes</span>
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Kafka</span>
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Redis</span>
-                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">WebSocket</span>
+            <section id="main-project" class="mb-28 sm:mb-36">
+                <h3 class="text-3xl font-bold text-slate-900 text-center mb-16 section-title">Main Project</h3>
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-lg card-hover overflow-hidden cursor-pointer" onclick="location.href='#'">
+                    <img class="w-full h-auto md:h-96 object-cover" src="https://placehold.co/1200x600/e0f2fe/0ea5e9?text=Live-Casting" alt="Live-Casting Project Thumbnail">
+                    <div class="p-8 sm:p-10">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <h4 class="text-2xl font-bold text-blue-600">Live-Casting (라이브캐스팅)</h4>
+                            <span class="text-sm font-semibold text-slate-500 bg-slate-100 px-3 py-1 rounded-full mt-2 md:mt-0">Planning</span>
+                        </div>
+                        <p class="text-slate-600 mb-8 leading-relaxed">
+                            크리에이터가 팬들과 실시간으로 소통하며 자신의 상품을 판매하고, 특별 이벤트를 통해 팬덤을 강화할 수 있는 MSA 기반의 인터랙티브 방송 플랫폼입니다. 실시간 채팅, 좋아요, 구독, 선착순 이벤트 등의 기능을 통해 크리에이터와 팬들이 더욱 밀접하게 연결될 수 있도록 설계된 플랫폼입니다.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <!-- Back-end Tags -->
+                            <span class="bg-sky-100 text-sky-800 text-sm font-medium px-4 py-1.5 rounded-full">Spring Boot</span>
+                            <!-- Front-end Tags -->
+                            <span class="bg-teal-100 text-teal-800 text-sm font-medium px-4 py-1.5 rounded-full">React</span>
+                            <!-- Infra Tags -->
+                            <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-1.5 rounded-full">MSA</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-1.5 rounded-full">Kubernetes</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-1.5 rounded-full">Kafka</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-1.5 rounded-full">WebSocket</span>
+                            <!-- DB Tags -->
+                            <span class="bg-amber-100 text-amber-800 text-sm font-medium px-4 py-1.5 rounded-full">Redis</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- 사이드 프로젝트 섹션 -->
-            <section class="mb-24 sm:mb-32">
-                <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">Side Projects</h3>
+            <section id="side-projects" class="mb-28 sm:mb-36">
+                <h3 class="text-3xl font-bold text-slate-900 text-center mb-16 section-title">Side Projects</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Sentifl -->
-                    <div class="bg-white rounded-xl p-6 border border-gray-200 transition-all duration-300 hover:shadow-md cursor-pointer" onclick="location.href='sentifl.html'">
-                        <h4 class="text-xl font-bold text-gray-800 mb-2">Sentifl</h4>
-                        <p class="text-gray-600 text-sm mb-4">BGM 생성 AI 블로그 (졸업 작품 리펙토링)</p>
-                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">React</span>
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">SpringBoot</span>
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">FastAPI</span>
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">AWS</span>
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Keras</span>
+                    <!-- Project Card: Sentifl -->
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-md card-hover overflow-hidden cursor-pointer" onclick="location.href='#'">
+                        <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/f3e8ff/8b5cf6?text=Sentifl" alt="Sentifl Project Thumbnail">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Sentifl</h4>
+                            <p class="text-slate-600 text-sm mb-4 min-h-[40px]">BGM 생성 AI 블로그 (졸업 작품 리펙토링)</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-1 rounded-full">React</span>
+                                <span class="bg-sky-100 text-sky-800 text-xs font-medium px-2.5 py-1 rounded-full">SpringBoot</span>
+                                <span class="bg-sky-100 text-sky-800 text-xs font-medium px-2.5 py-1 rounded-full">FastAPI</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-1 rounded-full">AWS</span>
+                                <span class="bg-rose-100 text-rose-800 text-xs font-medium px-2.5 py-1 rounded-full">Keras</span>
+                            </div>
                         </div>
                     </div>
-                    <!-- SSAFYNEWS -->
-                    <div class="bg-white rounded-xl p-6 border border-gray-200 transition-all duration-300 hover:shadow-md cursor-pointer" onclick="location.href='ssafynews.html'">
-                        <h4 class="text-xl font-bold text-gray-800 mb-2">SSAFYNEWS</h4>
-                        <p class="text-gray-600 text-sm mb-4">News를 수집하고 AI를 활용해 사용자 맞춤 추천 및 뉴스 기반 챗봇 서비스</p>
-                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Vue.js</span>
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Django</span>
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">PostgreSQL</span>
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Kafka</span>
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Ollama</span>
+                    <!-- Project Card: SSAFYNEWS -->
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-md card-hover overflow-hidden cursor-pointer" onclick="location.href='#'">
+                        <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/dcfce7/16a34a?text=SSAFYNEWS" alt="SSAFYNEWS Project Thumbnail">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">SSAFYNEWS</h4>
+                            <p class="text-slate-600 text-sm mb-4 min-h-[40px]">News 수집, AI 활용 사용자 맞춤 추천 및 뉴스 기반 챗봇 서비스</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-1 rounded-full">Vue.js</span>
+                                <span class="bg-sky-100 text-sky-800 text-xs font-medium px-2.5 py-1 rounded-full">Django</span>
+                                <span class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-1 rounded-full">PostgreSQL</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-1 rounded-full">Kafka</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-1 rounded-full">Ollama</span>
+                            </div>
                         </div>
                     </div>
-                    <!-- 균열 탐지 AI 모듈 -->
-                    <div class="bg-white rounded-xl p-6 border border-gray-200 transition-all duration-300 hover:shadow-md cursor-pointer" onclick="location.href='crack-detection.html'">
-                        <h4 class="text-xl font-bold text-gray-800 mb-2">균열 탐지 AI 모듈</h4>
-                        <p class="text-gray-600 text-sm mb-4">컴퓨터 비전을 활용한 건물 균열 탐지 및 분석 AI 시스템</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Python</span>
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">OpenCV</span>
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">TensorFlow</span>
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Computer Vision</span>
+                    <!-- Project Card: 균열 탐지 AI 모듈 -->
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-md card-hover overflow-hidden cursor-pointer" onclick="location.href='#'">
+                        <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/fee2e2/ef4444?text=Crack+Detection" alt="Crack Detection AI Project Thumbnail">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">균열 탐지 AI 모듈</h4>
+                            <p class="text-slate-600 text-sm mb-4 min-h-[40px]">컴퓨터 비전을 활용한 건물 균열 탐지 및 분석 AI 시스템</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-sky-100 text-sky-800 text-xs font-medium px-2.5 py-1 rounded-full">Python</span>
+                                <span class="bg-rose-100 text-rose-800 text-xs font-medium px-2.5 py-1 rounded-full">OpenCV</span>
+                                <span class="bg-rose-100 text-rose-800 text-xs font-medium px-2.5 py-1 rounded-full">TensorFlow</span>
+                                <span class="bg-rose-100 text-rose-800 text-xs font-medium px-2.5 py-1 rounded-full">Computer Vision</span>
+                            </div>
                         </div>
                     </div>
-                    <!-- SSABAB -->
-                    <div class="bg-white rounded-xl p-6 border border-gray-200 transition-all duration-300 hover:shadow-md cursor-pointer" onclick="location.href='ssabab.html'">
-                        <h4 class="text-xl font-bold text-gray-800 mb-2">SSABAB</h4>
-                        <p class="text-gray-600 text-sm mb-4">SSAFY 대전 캠퍼스 교육생을 대상으로 금일 메뉴 중 어떤 메뉴가 더 맛있는지 과거 데이터를 기반으로 예측해주는 서비스 (실사용자 프로젝트)</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">NextJS</span>
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">SpringBoot</span>
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">MySQL</span>
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">K8s</span>
-                            <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Prometheus</span>
+                    <!-- Project Card: SSABAB -->
+                    <div class="bg-white rounded-xl border border-slate-200 shadow-md card-hover overflow-hidden cursor-pointer" onclick="location.href='#'">
+                        <img class="w-full h-48 object-cover" src="https://placehold.co/600x400/ffedd5/f97316?text=SSABAB" alt="SSABAB Project Thumbnail">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">SSABAB</h4>
+                            <p class="text-slate-600 text-sm mb-4 min-h-[40px]">SSAFY 대전 캠퍼스 교육생 대상 메뉴 선호도 예측 서비스</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-teal-100 text-teal-800 text-xs font-medium px-2.5 py-1 rounded-full">NextJS</span>
+                                <span class="bg-sky-100 text-sky-800 text-xs font-medium px-2.5 py-1 rounded-full">SpringBoot</span>
+                                <span class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-1 rounded-full">MySQL</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-1 rounded-full">K8s</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-1 rounded-full">Prometheus</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
             
             <!-- 토이 프로젝트 섹션 -->
-            <section class="mb-24 sm:mb-32">
-                <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">Toy Projects</h3>
-                
-                <!-- Web Toy Projects -->
-                <div class="mb-12">
-                    <h4 class="text-xl font-bold text-gray-800 text-center mb-6">Web Projects</h4>
-                    <div class="bg-white rounded-xl p-6 border border-gray-200 transition-all duration-300 hover:shadow-md cursor-pointer" onclick="location.href='toy-web.html'">
-                        <div class="text-center">
-                            <h5 class="text-lg font-bold text-gray-800 mb-3">웹 개발 토이 프로젝트 모음</h5>
-                            <p class="text-gray-600 text-sm mb-4">기본적인 웹 개발 기술들을 연습하고 익히기 위한 소규모 프로젝트들</p>
-                            <div class="flex flex-wrap justify-center gap-2 mb-4">
-                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Todo App</span>
-                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Auth System</span>
-                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Blog</span>
-                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Board</span>
-                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Shop</span>
-                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Video Platform</span>
-                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Chat System</span>
-                            </div>
-                            <div class="flex flex-wrap justify-center gap-2">
-                                <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">React</span>
-                                <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">SpringBoot</span>
-                                <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Redis</span>
-                                <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">WebSocket</span>
-                                <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">CDN</span>
-                            </div>
+            <section id="toy-projects" class="mb-28 sm:mb-36">
+                <h3 class="text-3xl font-bold text-slate-900 text-center mb-16 section-title">Toy Projects</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Web Toy Projects -->
+                    <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-md card-hover cursor-pointer" onclick="location.href='#'">
+                        <h4 class="text-xl font-bold text-slate-800 mb-2 text-center">Web Projects</h4>
+                        <p class="text-slate-600 text-sm mb-4 text-center">웹 개발 기술 연습을 위한 소규모 프로젝트 모음</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Todo App</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Auth System</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Blog</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Board</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">Shop</span>
+                        </div>
+                    </div>
+                    <!-- AI Toy Projects -->
+                    <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-md card-hover cursor-pointer" onclick="location.href='#'">
+                        <h4 class="text-xl font-bold text-slate-800 mb-2 text-center">AI Projects</h4>
+                        <p class="text-slate-600 text-sm mb-4 text-center">AI/ML 기술 학습 및 실습을 위한 프로젝트 모음</p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-1 rounded-full">ML/DL</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-1 rounded-full">CV</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-1 rounded-full">NLP</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-1 rounded-full">Recommendation</span>
                         </div>
                     </div>
                 </div>
-                
-                <!-- AI Toy Projects -->
-                <div>
-                    <h4 class="text-xl font-bold text-gray-800 text-center mb-6">AI Projects</h4>
-                    <div class="bg-white rounded-xl p-6 border border-gray-200 transition-all duration-300 hover:shadow-md cursor-pointer" onclick="location.href='toy-ai.html'">
-                        <div class="text-center">
-                            <h5 class="text-lg font-bold text-gray-800 mb-3">AI/ML 학습 프로젝트 모음</h5>
-                            <p class="text-gray-600 text-sm mb-4">머신러닝과 딥러닝 기술을 학습하고 실습하기 위한 프로젝트들</p>
-                            <div class="flex flex-wrap justify-center gap-2 mb-4">
-                                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-1 rounded-full">Machine Learning</span>
-                                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-1 rounded-full">Deep Learning</span>
-                            </div>
-                            <div class="flex flex-wrap justify-center gap-2">
-                                <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Python</span>
-                                <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">TensorFlow</span>
-                                <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">PyTorch</span>
-                                <span class="bg-gray-200 text-gray-800 text-xs font-medium px-2.5 py-1 rounded-full">Scikit-learn</span>
-                            </div>
+            </section>
+
+            <!-- Awards & Certificates 섹션 -->
+            <section id="awards" class="mb-28 sm:mb-36">
+                <h3 class="text-3xl font-bold text-slate-900 text-center mb-16 section-title">Awards & Certificates</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl p-6 border border-slate-200 card-hover flex items-center space-x-4">
+                        <i data-feather="award" class="w-8 h-8 text-amber-500"></i>
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800">삼성 SW 역량테스트 B형</h4>
+                            <p class="text-slate-500 text-sm">2025.03</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-slate-200 card-hover flex items-center space-x-4">
+                        <i data-feather="award" class="w-8 h-8 text-amber-500"></i>
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800">빅데이터분석기사</h4>
+                            <p class="text-slate-500 text-sm">2025.07</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-slate-200 card-hover flex items-center space-x-4">
+                        <i data-feather="award" class="w-8 h-8 text-amber-500"></i>
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800">SQLD</h4>
+                            <p class="text-slate-500 text-sm">2023.12</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-slate-200 card-hover flex items-center space-x-4">
+                        <i data-feather="award" class="w-8 h-8 text-amber-500"></i>
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800">ADsP</h4>
+                            <p class="text-slate-500 text-sm">2024.06</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-slate-200 card-hover flex items-center space-x-4">
+                        <i data-feather="award" class="w-8 h-8 text-amber-500"></i>
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-800">OPIc - IL</h4>
+                            <p class="text-slate-500 text-sm">2025.05</p>
                         </div>
                     </div>
                 </div>
             </section>
             
-            <section class="mb-24 sm:mb-32">
-                <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">Awards & Certificates</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-white rounded-xl p-6 border border-gray-200">
-                        <h4 class="text-lg font-bold text-gray-800 mb-1">삼성 SW 역량테스트 B형</h4>
-                        <p class="text-gray-500 text-sm">2025.03</p>
+            <!-- Education & Experience 섹션 -->
+            <section id="history" class="mb-28 sm:mb-36">
+                <h3 class="text-3xl font-bold text-slate-900 text-center mb-16 section-title">Education & Experience</h3>
+                <div class="relative max-w-2xl mx-auto">
+                    <div class="absolute left-3 sm:left-1/2 w-1 h-full bg-slate-200 -translate-x-1/2"></div>
+                    <!-- Timeline Item -->
+                    <div class="relative group">
+                        <div class="absolute left-3 sm:left-1/2 w-6 h-6 bg-white rounded-full -translate-x-1/2 mt-2 border-4 border-blue-500 transition-all duration-300 group-hover:bg-blue-500"></div>
+                        <div class="p-6 rounded-xl sm:ml-[55%] sm:pl-10">
+                            <p class="text-sm text-slate-500 mb-1">2025.01 - 현재</p>
+                            <h4 class="text-xl font-bold text-slate-800">삼성 청년 SW 아카데미 (SSAFY) 13기</h4>
+                            <p class="text-slate-600">Python, Django, Vue, Kafka, Flink, Spark, Airflow, Hadoop 등 학습</p>
+                        </div>
                     </div>
-                    <div class="bg-white rounded-xl p-6 border border-gray-200">
-                        <h4 class="text-lg font-bold text-gray-800 mb-1">빅데이터분석기사</h4>
-                        <p class="text-gray-500 text-sm">2025.07</p>
+                    <!-- Timeline Item -->
+                    <div class="relative group">
+                        <div class="absolute left-3 sm:left-1/2 w-6 h-6 bg-white rounded-full -translate-x-1/2 mt-2 border-4 border-blue-500 transition-all duration-300 group-hover:bg-blue-500"></div>
+                        <div class="p-6 rounded-xl sm:text-right sm:mr-[55%] sm:pr-10">
+                            <p class="text-sm text-slate-500 mb-1">2021.03 - 2025.02</p>
+                            <h4 class="text-xl font-bold text-slate-800">영남대학교 졸업</h4>
+                            <p class="text-slate-600">통계학과 & 컴퓨터공학과 복수전공</p>
+                        </div>
                     </div>
-                    <div class="bg-white rounded-xl p-6 border border-gray-200">
-                        <h4 class="text-lg font-bold text-gray-800 mb-1">SQLD</h4>
-                        <p class="text-gray-500 text-sm">2023.12</p>
+                     <!-- Timeline Item -->
+                    <div class="relative group">
+                        <div class="absolute left-3 sm:left-1/2 w-6 h-6 bg-white rounded-full -translate-x-1/2 mt-2 border-4 border-blue-500 transition-all duration-300 group-hover:bg-blue-500"></div>
+                        <div class="p-6 rounded-xl sm:ml-[55%] sm:pl-10">
+                            <p class="text-sm text-slate-500 mb-1">2022.09 - 2023.07</p>
+                            <h4 class="text-xl font-bold text-slate-800">제 1회 It’s DGB, I’m Challenger</h4>
+                            <p class="text-slate-600">Final Round 진출 (Top 6)</p>
+                        </div>
                     </div>
-                    <div class="bg-white rounded-xl p-6 border border-gray-200">
-                        <h4 class="text-lg font-bold text-gray-800 mb-1">ADsP</h4>
-                        <p class="text-gray-500 text-sm">2024.06</p>
-                    </div>
-                    <div class="bg-white rounded-xl p-6 border border-gray-200">
-                        <h4 class="text-lg font-bold text-gray-800 mb-1">OPIc - IL</h4>
-                        <p class="text-gray-500 text-sm">2025.05</p>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="mb-24 sm:mb-32">
-                <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">Education & Experience</h3>
-                <div class="space-y-12">
-                    <!-- 경력 항목 1 -->
-                    <div class="relative pl-8 border-l-2 border-gray-300">
-                         <div class="absolute -left-2.5 top-1 w-5 h-5 bg-blue-500 rounded-full border-4 border-white"></div>
-                         <p class="text-sm text-gray-500 mb-1">2025.01 - 현재</p>
-                         <h4 class="text-xl font-bold text-gray-800">삼성 청년 SW 아카데미 (SSAFY) 13기</h4>
-                         <p class="text-gray-600">Python, Django, Vue, Kafka, Flink, Spark, Airflow, Hadoop 등 학습</p>
-                    </div>
-                    <!-- 경력 항목 2 -->
-                    <div class="relative pl-8 border-l-2 border-gray-300">
-                        <div class="absolute -left-2.5 top-1 w-5 h-5 bg-blue-500 rounded-full border-4 border-white"></div>
-                        <p class="text-sm text-gray-500 mb-1">2021.03 - 2025.02</p>
-                        <h4 class="text-xl font-bold text-gray-800">영남대학교 졸업</h4>
-                        <p class="text-gray-600">통계학과 & 컴퓨터공학과 복수전공</p>
-                    </div>
-                     <!-- 경력 항목 3 -->
-                    <div class="relative pl-8 border-l-2 border-gray-300">
-                        <div class="absolute -left-2.5 top-1 w-5 h-5 bg-blue-500 rounded-full border-4 border-white"></div>
-                        <p class="text-sm text-gray-500 mb-1">2022.09 - 2023.07</p>
-                        <h4 class="text-xl font-bold text-gray-800">제 1회 It’s DGB, I’m Challenger</h4>
-                        <p class="text-gray-600">Final Round 진출 (Top 6)</p>
-                    </div>
-                     <!-- 경력 항목 4 -->
-                    <div class="relative pl-8 border-l-2 border-gray-300">
-                        <div class="absolute -left-2.5 top-1 w-5 h-5 bg-blue-500 rounded-full border-4 border-white"></div>
-                        <p class="text-sm text-gray-500 mb-1">2023.02 - 2023.03</p>
-                        <h4 class="text-xl font-bold text-gray-800">메가존클라우드 디지털 인재 양성과정</h4>
-                        <p class="text-gray-600">아이티 평생교육원</p>
-                    </div>
-                     <!-- 경력 항목 5 -->
-                    <div class="relative pl-8 border-l-2 border-gray-300">
-                        <div class="absolute -left-2.5 top-1 w-5 h-5 bg-blue-500 rounded-full border-4 border-white"></div>
-                        <p class="text-sm text-gray-500 mb-1">2022.07 - 2022.11</p>
-                        <h4 class="text-xl font-bold text-gray-800">다양한 IT 교육 이수</h4>
-                        <p class="text-gray-600">SQL, 파이썬 데이터분석/크롤링, NFT/블록체인, 빅데이터/AI 기초 등</p>
+                    <!-- Timeline Item -->
+                    <div class="relative group">
+                        <div class="absolute left-3 sm:left-1/2 w-6 h-6 bg-white rounded-full -translate-x-1/2 mt-2 border-4 border-blue-500 transition-all duration-300 group-hover:bg-blue-500"></div>
+                        <div class="p-6 rounded-xl sm:text-right sm:mr-[55%] sm:pr-10">
+                            <p class="text-sm text-slate-500 mb-1">2023.02 - 2023.03</p>
+                            <h4 class="text-xl font-bold text-slate-800">메가존클라우드 디지털 인재 양성과정</h4>
+                            <p class="text-slate-600">아이티 평생교육원</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <!-- Contact 섹션 -->
-            <section>
-                <h3 class="text-3xl font-bold text-gray-900 text-center mb-12">Contact</h3>
-                <div class="bg-white max-w-lg mx-auto rounded-xl p-8 border border-gray-200 shadow-md">
+            <section id="contact">
+                <h3 class="text-3xl font-bold text-slate-900 text-center mb-16 section-title">Contact</h3>
+                <div class="bg-white max-w-lg mx-auto rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-xl">
                     <div class="space-y-6">
-                        <!-- 이메일 -->
+                        <!-- Contact Item -->
+                        <a href="mailto:effort-result@naver.com" class="flex items-center space-x-4 group">
+                            <div class="bg-slate-100 p-3 rounded-full group-hover:bg-blue-100 transition-colors">
+                                <i data-feather="mail" class="w-6 h-6 text-slate-500 group-hover:text-blue-600"></i>
+                            </div>
+                            <span class="text-slate-700 group-hover:text-blue-600 transition-colors">effort-result@naver.com</span>
+                        </a>
+                        <!-- Contact Item -->
                         <div class="flex items-center space-x-4">
-                            <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            <a href="mailto:effort-result@naver.com" class="text-gray-700 hover:text-blue-600 transition-colors">effort-result@naver.com</a>
+                            <div class="bg-slate-100 p-3 rounded-full">
+                                <i data-feather="phone" class="w-6 h-6 text-slate-500"></i>
+                            </div>
+                            <span class="text-slate-700">010-9386-9428</span>
                         </div>
-                        <!-- 전화번호 -->
-                        <div class="flex items-center space-x-4">
-                            <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                            <span class="text-gray-700">010-9386-9428</span>
-                        </div>
-                        <!-- GitHub -->
-                        <div class="flex items-center space-x-4">
-                            <svg class="w-6 h-6 text-gray-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
-                            <a href="https://github.com/Yoo-SeungHyeon" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-blue-600 transition-colors">github.com/Yoo-SeungHyeon</a>
-                        </div>
-                        <!-- Blog -->
-                        <div class="flex items-center space-x-4">
-                            <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                            <a href="https://velog.io/@yoo-seunghyeon" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-blue-600 transition-colors">velog.io/@yoo-seunghyeon</a>
-                        </div>
+                        <!-- Contact Item -->
+                        <a href="https://github.com/Yoo-SeungHyeon" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-4 group">
+                            <div class="bg-slate-100 p-3 rounded-full group-hover:bg-blue-100 transition-colors">
+                                <i data-feather="github" class="w-6 h-6 text-slate-500 group-hover:text-blue-600"></i>
+                            </div>
+                            <span class="text-slate-700 group-hover:text-blue-600 transition-colors">github.com/Yoo-SeungHyeon</span>
+                        </a>
+                        <!-- Contact Item -->
+                        <a href="https://velog.io/@yoo-seunghyeon" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-4 group">
+                             <div class="bg-slate-100 p-3 rounded-full group-hover:bg-blue-100 transition-colors">
+                                <i data-feather="edit-3" class="w-6 h-6 text-slate-500 group-hover:text-blue-600"></i>
+                            </div>
+                            <span class="text-slate-700 group-hover:text-blue-600 transition-colors">velog.io/@yoo-seunghyeon</span>
+                        </a>
                     </div>
                 </div>
             </section>
-
         </main>
 
         <!-- 푸터 -->
-        <footer class="text-center py-16 mt-24 sm:mt-32">
-            <p class="text-sm text-gray-500">
+        <footer class="text-center py-16 mt-28 sm:mt-36 border-t border-slate-200">
+            <p class="text-sm text-slate-500">
                 &copy; 2025 yooosh. All Rights Reserved.
             </p>
         </footer>
     </div>
-
+    
+    <script>
+        // Feather 아이콘 초기화
+        feather.replace();
+    </script>
 </body>
 </html>
