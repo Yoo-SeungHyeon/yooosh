@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Toy Projects - yooosh 포트폴리오</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .font-logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-700">
+
+    <!-- 전체 페이지 컨테이너 -->
+    <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+        <!-- 네비게이션 -->
+        <nav class="py-8">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="font-logo text-2xl tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-sky-400">
+                    yooosh
+                </a>
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition-colors">← 포트폴리오로 돌아가기</a>
+            </div>
+        </nav>
+
+        <main>
+            <!-- 프로젝트 헤더 -->
+            <section class="text-center mb-16">
+                <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">AI Toy Projects</h1>
+                <h2 class="text-xl text-gray-600 mb-6">AI/ML 기술 학습을 위한 실습 프로젝트 모음</h2>
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <span class="bg-purple-100 text-purple-800 text-sm font-medium px-4 py-2 rounded-full">Python</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">TensorFlow</span>
+                    <span class="bg-orange-100 text-orange-800 text-sm font-medium px-4 py-2 rounded-full">PyTorch</span>
+                    <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">Scikit-learn</span>
+                    <span class="bg-red-100 text-red-800 text-sm font-medium px-4 py-2 rounded-full">Jupyter</span>
+                </div>
+                <div class="bg-purple-100 text-purple-800 text-sm font-medium px-4 py-2 rounded-lg inline-block">
+                    🤖 Category: AI/ML Learning Projects
+                </div>
+            </section>
+
+            <!-- 프로젝트 개요 -->
+            <section class="mb-16">
+                <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+                    <div class="text-center mb-8">
+                        <span class="text-sm font-medium bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Category: AI/ML Learning Projects</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">학습 목적</h4>
+                            <p class="text-gray-600 leading-relaxed">
+                                인공지능과 머신러닝의 핵심 개념을 이해하고 실무에 적용할 수 있는 능력을 기르기 위한 실습 프로젝트들입니다. 
+                                기초적인 통계 분석부터 고급 딥러닝 모델 구현까지 체계적으로 학습합니다.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">기술적 범위</h4>
+                            <ul class="text-gray-600 space-y-2">
+                                <li>• 데이터 사이언스 기초</li>
+                                <li>• 머신러닝 알고리즘 구현</li>
+                                <li>• 딥러닝 모델 개발</li>
+                                <li>• MLOps 및 모델 배포</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI 프로젝트 목록 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-12">프로젝트 목록</h3>
+                <div class="space-y-12">
+                    
+                    <!-- Machine Learning 프로젝트 -->
+                    <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-md">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="bg-gradient-to-br from-blue-100 to-purple-100 p-4 rounded-lg">
+                                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
+                                <span class="text-blue-600 font-bold text-xl">ML</span>
+                            </div>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-bold text-gray-900">Machine Learning Projects</h4>
+                                <p class="text-gray-600">전통적인 머신러닝 알고리즘 학습 및 실습</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                            <!-- 분류 프로젝트 -->
+                            <div class="bg-blue-50 rounded-lg p-6">
+                                <h5 class="font-bold text-blue-800 mb-3">분류 (Classification)</h5>
+                                <ul class="text-sm text-gray-700 space-y-2">
+                                    <li>• 타이타닉 생존자 예측</li>
+                                    <li>• 붓꽃 품종 분류</li>
+                                    <li>• 와인 품질 분류</li>
+                                    <li>• 스팸 메일 필터링</li>
+                                </ul>
+                                <div class="flex flex-wrap gap-1 mt-4">
+                                    <span class="bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded">Logistic Regression</span>
+                                    <span class="bg-green-200 text-green-800 text-xs px-2 py-1 rounded">Random Forest</span>
+                                    <span class="bg-purple-200 text-purple-800 text-xs px-2 py-1 rounded">SVM</span>
+                                </div>
+                            </div>
+                            
+                            <!-- 회귀 프로젝트 -->
+                            <div class="bg-green-50 rounded-lg p-6">
+                                <h5 class="font-bold text-green-800 mb-3">📈 회귀 (Regression)</h5>
+                                <ul class="text-sm text-gray-700 space-y-2">
+                                    <li>• 주택 가격 예측</li>
+                                    <li>• 주식 가격 예측</li>
+                                    <li>• 매출 예측</li>
+                                    <li>• 에너지 소비량 예측</li>
+                                </ul>
+                                <div class="flex flex-wrap gap-1 mt-4">
+                                    <span class="bg-green-200 text-green-800 text-xs px-2 py-1 rounded">Linear Regression</span>
+                                    <span class="bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded">Polynomial</span>
+                                    <span class="bg-purple-200 text-purple-800 text-xs px-2 py-1 rounded">Ridge/Lasso</span>
+                                </div>
+                            </div>
+                            
+                            <!-- 클러스터링 프로젝트 -->
+                            <div class="bg-purple-50 rounded-lg p-6">
+                                <h5 class="font-bold text-purple-800 mb-3">🔍 클러스터링</h5>
+                                <ul class="text-sm text-gray-700 space-y-2">
+                                    <li>• 고객 세그멘테이션</li>
+                                    <li>• 마케팅 타겟 그룹 분석</li>
+                                    <li>• 이미지 색상 분할</li>
+                                    <li>• 뉴스 토픽 모델링</li>
+                                </ul>
+                                <div class="flex flex-wrap gap-1 mt-4">
+                                    <span class="bg-purple-200 text-purple-800 text-xs px-2 py-1 rounded">K-Means</span>
+                                    <span class="bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded">DBSCAN</span>
+                                    <span class="bg-green-200 text-green-800 text-xs px-2 py-1 rounded">LDA</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-6">
+                                                            <h5 class="font-bold text-gray-800 mb-3">학습할 핵심 기술</h5>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div>
+                                    <h6 class="font-semibold text-sm text-gray-700 mb-2">데이터 전처리</h6>
+                                    <ul class="text-xs text-gray-600 space-y-1">
+                                        <li>• Pandas</li>
+                                        <li>• NumPy</li>
+                                        <li>• Feature Engineering</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h6 class="font-semibold text-sm text-gray-700 mb-2">시각화</h6>
+                                    <ul class="text-xs text-gray-600 space-y-1">
+                                        <li>• Matplotlib</li>
+                                        <li>• Seaborn</li>
+                                        <li>• Plotly</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h6 class="font-semibold text-sm text-gray-700 mb-2">모델링</h6>
+                                    <ul class="text-xs text-gray-600 space-y-1">
+                                        <li>• Scikit-learn</li>
+                                        <li>• XGBoost</li>
+                                        <li>• LightGBM</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h6 class="font-semibold text-sm text-gray-700 mb-2">평가</h6>
+                                    <ul class="text-xs text-gray-600 space-y-1">
+                                        <li>• Cross Validation</li>
+                                        <li>• Hyperparameter Tuning</li>
+                                        <li>• Model Evaluation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-6">
+                            <span class="bg-orange-100 text-orange-800 text-sm font-medium px-4 py-2 rounded-full">
+                                🚧 Planning Phase
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Deep Learning 프로젝트 -->
+                    <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-md">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="bg-gradient-to-br from-purple-100 to-pink-100 p-4 rounded-lg">
+                                <span class="text-3xl">🧠</span>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-bold text-gray-900">Deep Learning Projects</h4>
+                                <p class="text-gray-600">딥러닝 네트워크 구조 학습 및 고급 AI 모델 개발</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                            <!-- 컴퓨터 비전 -->
+                            <div class="bg-red-50 rounded-lg p-6">
+                                <h5 class="font-bold text-red-800 mb-3">👁️ Computer Vision</h5>
+                                <ul class="text-sm text-gray-700 space-y-2">
+                                    <li>• MNIST 손글씨 인식</li>
+                                    <li>• CIFAR-10 이미지 분류</li>
+                                    <li>• 얼굴 인식 시스템</li>
+                                    <li>• 스타일 전이 (Style Transfer)</li>
+                                    <li>• 객체 검출 (Object Detection)</li>
+                                </ul>
+                                <div class="flex flex-wrap gap-1 mt-4">
+                                    <span class="bg-red-200 text-red-800 text-xs px-2 py-1 rounded">CNN</span>
+                                    <span class="bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded">ResNet</span>
+                                    <span class="bg-green-200 text-green-800 text-xs px-2 py-1 rounded">YOLO</span>
+                                </div>
+                            </div>
+                            
+                            <!-- 자연어 처리 -->
+                            <div class="bg-blue-50 rounded-lg p-6">
+                                <h5 class="font-bold text-blue-800 mb-3">📝 NLP</h5>
+                                <ul class="text-sm text-gray-700 space-y-2">
+                                    <li>• 감정 분석</li>
+                                    <li>• 텍스트 분류</li>
+                                    <li>• 기계 번역</li>
+                                    <li>• 챗봇 개발</li>
+                                    <li>• 텍스트 요약</li>
+                                </ul>
+                                <div class="flex flex-wrap gap-1 mt-4">
+                                    <span class="bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded">RNN</span>
+                                    <span class="bg-purple-200 text-purple-800 text-xs px-2 py-1 rounded">LSTM</span>
+                                    <span class="bg-green-200 text-green-800 text-xs px-2 py-1 rounded">Transformer</span>
+                                </div>
+                            </div>
+                            
+                            <!-- 생성 모델 -->
+                            <div class="bg-yellow-50 rounded-lg p-6">
+                                <h5 class="font-bold text-yellow-800 mb-3">🎨 Generative AI</h5>
+                                <ul class="text-sm text-gray-700 space-y-2">
+                                    <li>• 이미지 생성 (GAN)</li>
+                                    <li>• 음악 생성</li>
+                                    <li>• 텍스트 생성</li>
+                                    <li>• 데이터 증강</li>
+                                    <li>• 초해상도 (Super Resolution)</li>
+                                </ul>
+                                <div class="flex flex-wrap gap-1 mt-4">
+                                    <span class="bg-yellow-200 text-yellow-800 text-xs px-2 py-1 rounded">GAN</span>
+                                    <span class="bg-purple-200 text-purple-800 text-xs px-2 py-1 rounded">VAE</span>
+                                    <span class="bg-blue-200 text-blue-800 text-xs px-2 py-1 rounded">Diffusion</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-6">
+                                                            <h5 class="font-bold text-gray-800 mb-3">학습할 딥러닝 기술</h5>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div>
+                                    <h6 class="font-semibold text-sm text-gray-700 mb-2">프레임워크</h6>
+                                    <ul class="text-xs text-gray-600 space-y-1">
+                                        <li>• TensorFlow</li>
+                                        <li>• PyTorch</li>
+                                        <li>• Keras</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h6 class="font-semibold text-sm text-gray-700 mb-2">네트워크 구조</h6>
+                                    <ul class="text-xs text-gray-600 space-y-1">
+                                        <li>• CNN Architecture</li>
+                                        <li>• RNN/LSTM/GRU</li>
+                                        <li>• Attention Mechanism</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h6 class="font-semibold text-sm text-gray-700 mb-2">최적화</h6>
+                                    <ul class="text-xs text-gray-600 space-y-1">
+                                        <li>• Transfer Learning</li>
+                                        <li>• Data Augmentation</li>
+                                        <li>• Regularization</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h6 class="font-semibold text-sm text-gray-700 mb-2">배포</h6>
+                                    <ul class="text-xs text-gray-600 space-y-1">
+                                        <li>• Model Serving</li>
+                                        <li>• TensorFlow Lite</li>
+                                        <li>• ONNX</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-6">
+                            <span class="bg-orange-100 text-orange-800 text-sm font-medium px-4 py-2 rounded-full">
+                                🚧 Planning Phase
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 학습 로드맵 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">AI/ML 학습 로드맵</h3>
+                <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-md">
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-100 p-3 rounded-full">
+                                <span class="text-blue-600 font-bold text-sm">1</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-gray-900 mb-2">기초 단계: 데이터 사이언스 & 통계</h4>
+                                <p class="text-gray-600 text-sm mb-3">Python 기초, 데이터 분석, 통계학 기본 개념 학습</p>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                    <div class="bg-blue-50 p-3 rounded">
+                                        <h6 class="font-semibold text-xs text-blue-800 mb-1">Python</h6>
+                                        <ul class="text-xs text-gray-600">
+                                            <li>• NumPy</li>
+                                            <li>• Pandas</li>
+                                            <li>• Matplotlib</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-green-50 p-3 rounded">
+                                        <h6 class="font-semibold text-xs text-green-800 mb-1">통계학</h6>
+                                        <ul class="text-xs text-gray-600">
+                                            <li>• 기술통계</li>
+                                            <li>• 확률분포</li>
+                                            <li>• 가설검정</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-purple-50 p-3 rounded">
+                                        <h6 class="font-semibold text-xs text-purple-800 mb-1">EDA</h6>
+                                        <ul class="text-xs text-gray-600">
+                                            <li>• 데이터 탐색</li>
+                                            <li>• 시각화</li>
+                                            <li>• 상관관계</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-orange-50 p-3 rounded">
+                                        <h6 class="font-semibold text-xs text-orange-800 mb-1">전처리</h6>
+                                        <ul class="text-xs text-gray-600">
+                                            <li>• 결측치 처리</li>
+                                            <li>• 이상치 제거</li>
+                                            <li>• 정규화</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-green-100 p-3 rounded-full">
+                                <span class="text-green-600 font-bold text-sm">2</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-gray-900 mb-2">중급 단계: 머신러닝 마스터</h4>
+                                <p class="text-gray-600 text-sm mb-3">지도/비지도 학습, 앙상블, 모델 평가 및 튜닝</p>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                    <div class="bg-blue-50 p-3 rounded">
+                                        <h6 class="font-semibold text-xs text-blue-800 mb-1">지도학습</h6>
+                                        <ul class="text-xs text-gray-600">
+                                            <li>• 분류</li>
+                                            <li>• 회귀</li>
+                                            <li>• 성능 평가</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-purple-50 p-3 rounded">
+                                        <h6 class="font-semibold text-xs text-purple-800 mb-1">비지도학습</h6>
+                                        <ul class="text-xs text-gray-600">
+                                            <li>• 클러스터링</li>
+                                            <li>• 차원축소</li>
+                                            <li>• 연관규칙</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-green-50 p-3 rounded">
+                                        <h6 class="font-semibold text-xs text-green-800 mb-1">앙상블</h6>
+                                        <ul class="text-xs text-gray-600">
+                                            <li>• Random Forest</li>
+                                            <li>• XGBoost</li>
+                                            <li>• Stacking</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-orange-50 p-3 rounded">
+                                        <h6 class="font-semibold text-xs text-orange-800 mb-1">모델 튜닝</h6>
+                                        <ul class="text-xs text-gray-600">
+                                            <li>• Grid Search</li>
+                                            <li>• Cross Validation</li>
+                                            <li>• Feature Selection</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-purple-100 p-3 rounded-full">
+                                <span class="text-purple-600 font-bold text-sm">3</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-gray-900 mb-2">고급 단계: 딥러닝 & 실무 적용</h4>
+                                <p class="text-gray-600 text-sm mb-3">신경망, 컴퓨터 비전, NLP, 생성 모델 및 실제 서비스 배포</p>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                    <div class="bg-red-50 p-3 rounded">
+                                        <h6 class="font-semibold text-xs text-red-800 mb-1">Computer Vision</h6>
+                                        <ul class="text-xs text-gray-600">
+                                            <li>• CNN</li>
+                                            <li>• Object Detection</li>
+                                            <li>• Image Generation</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-blue-50 p-3 rounded">
+                                        <h6 class="font-semibold text-xs text-blue-800 mb-1">NLP</h6>
+                                        <ul class="text-xs text-gray-600">
+                                            <li>• RNN/LSTM</li>
+                                            <li>• Transformer</li>
+                                            <li>• LLM</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-yellow-50 p-3 rounded">
+                                        <h6 class="font-semibold text-xs text-yellow-800 mb-1">Generative AI</h6>
+                                        <ul class="text-xs text-gray-600">
+                                            <li>• GAN</li>
+                                            <li>• VAE</li>
+                                            <li>• Diffusion</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-green-50 p-3 rounded">
+                                        <h6 class="font-semibold text-xs text-green-800 mb-1">MLOps</h6>
+                                        <ul class="text-xs text-gray-600">
+                                            <li>• Model Serving</li>
+                                            <li>• Monitoring</li>
+                                            <li>• A/B Testing</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Coming Soon -->
+            <section class="mb-16">
+                <div class="bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl p-8 border border-purple-200 text-center">
+                    <span class="text-4xl mb-4 block">🤖</span>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">AI 학습 여정 시작</h3>
+                    <p class="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
+                        인공지능과 머신러닝 분야는 빠르게 발전하고 있는 핵심 기술입니다. 
+                        기초부터 고급 기술까지 체계적으로 학습하여, 실무에서 활용할 수 있는 AI 개발 능력을 기르겠습니다. 
+                        이론과 실습을 병행하며 최신 트렌드에 맞춘 프로젝트로 포트폴리오를 구성할 예정입니다.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <span class="bg-purple-200 text-purple-800 text-sm font-medium px-4 py-2 rounded-full">
+                            📚 Theory & Practice
+                        </span>
+                        <span class="bg-blue-200 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">
+                            🔬 Research-oriented
+                        </span>
+                        <span class="bg-green-200 text-green-800 text-sm font-medium px-4 py-2 rounded-full">
+                            • Production-ready
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- 푸터 -->
+        <footer class="text-center py-16">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="index.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    포트폴리오로 돌아가기
+                </a>
+            </div>
+            <p class="text-sm text-gray-500">
+                &copy; 2025 yooosh. All Rights Reserved.
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html> 

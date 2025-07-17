@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSABAB - yooosh 포트폴리오</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .font-logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-700">
+
+    <!-- 전체 페이지 컨테이너 -->
+    <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+        <!-- 네비게이션 -->
+        <nav class="py-8">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="font-logo text-2xl tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-sky-400">
+                    yooosh
+                </a>
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition-colors">← 포트폴리오로 돌아가기</a>
+            </div>
+        </nav>
+
+        <main>
+            <!-- 프로젝트 헤더 -->
+            <section class="text-center mb-16">
+                <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">SSABAB</h1>
+                <h2 class="text-xl text-gray-600 mb-6">SSAFY 대전 캠퍼스 급식 메뉴 추천 시스템</h2>
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">Next.js</span>
+                    <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">Spring Boot</span>
+                    <span class="bg-purple-100 text-purple-800 text-sm font-medium px-4 py-2 rounded-full">MySQL</span>
+                    <span class="bg-orange-100 text-orange-800 text-sm font-medium px-4 py-2 rounded-full">Kubernetes</span>
+                    <span class="bg-red-100 text-red-800 text-sm font-medium px-4 py-2 rounded-full">Prometheus</span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4 mb-6">
+                    <div class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-lg">
+                        ✅ Status: Production & Live Service
+                    </div>
+                    <div class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-lg">
+                        👥 Target: SSAFY 대전 캠퍼스 교육생
+                    </div>
+                    <div class="bg-purple-100 text-purple-800 text-sm font-medium px-4 py-2 rounded-lg">
+                        Category: Data-Driven Service
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-green-100 to-blue-100 text-green-800 text-sm font-medium px-6 py-3 rounded-lg inline-block">
+                                            <strong>실사용자 프로젝트</strong> - 실제 교육생들이 매일 사용하는 서비스
+                </div>
+            </section>
+
+            <!-- 프로젝트 개요 -->
+            <section class="mb-16">
+                <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+                    <div class="text-center mb-8">
+                        <span class="text-sm font-medium bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Category: Data-Driven Service</span>
+                    </div>
+                    <div class="text-center mb-6">
+                        <strong>실사용자 프로젝트</strong> - 실제 교육생들이 매일 사용하는 서비스
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">문제 정의</h4>
+                            <p class="text-gray-600 leading-relaxed">
+                                SSAFY 교육생들의 급식 만족도 저하와 메뉴 선택의 어려움을 해결하기 위해 
+                                데이터 기반의 개인 맞춤형 급식 추천 시스템을 개발했습니다.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">해결 방안</h4>
+                            <ul class="text-gray-600 space-y-2">
+                                <li>• 사용자 평점 데이터 수집 및 분석</li>
+                                <li>• 협업 필터링 추천 알고리즘</li>
+                                <li>• 실시간 메뉴 정보 제공</li>
+                                <li>• 모니터링 기반 서비스 최적화</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 핵심 기능 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">핵심 기능</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- 메뉴 예측 시스템 -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-100 p-3 rounded-lg">
+                                <span class="text-2xl">🔮</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">오늘의 추천 메뉴 예측</h4>
+                                <p class="text-gray-600 mb-3">
+                                    과거 평점 데이터, 날씨, 요일, 시기 등을 종합 분석하여 오늘 가장 만족도가 높을 메뉴를 예측
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-blue-50 text-blue-800 text-xs px-2 py-1 rounded">Data Analytics</span>
+                                    <span class="bg-green-50 text-green-800 text-xs px-2 py-1 rounded">Prediction Model</span>
+                                    <span class="bg-purple-50 text-purple-800 text-xs px-2 py-1 rounded">Machine Learning</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 실시간 평점 시스템 -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-yellow-100 p-3 rounded-lg">
+                                <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
+                                    <span class="text-yellow-600 font-bold text-sm">1</span>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">실시간 평점 및 리뷰</h4>
+                                <p class="text-gray-600 mb-3">
+                                    교육생들이 실제로 먹은 메뉴에 대한 평점과 리뷰를 실시간으로 수집 및 표시
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-yellow-50 text-yellow-800 text-xs px-2 py-1 rounded">Real-time Rating</span>
+                                    <span class="bg-green-50 text-green-800 text-xs px-2 py-1 rounded">User Feedback</span>
+                                    <span class="bg-blue-50 text-blue-800 text-xs px-2 py-1 rounded">Review System</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 개인화 추천 -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-purple-100 p-3 rounded-lg">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <span class="text-blue-600 font-bold text-sm">2</span>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">개인별 맞춤 추천</h4>
+                                <p class="text-gray-600 mb-3">
+                                    사용자의 과거 평점 기록을 분석하여 개인 취향에 맞는 메뉴를 우선 추천
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-purple-50 text-purple-800 text-xs px-2 py-1 rounded">Personalization</span>
+                                    <span class="bg-blue-50 text-blue-800 text-xs px-2 py-1 rounded">User Profiling</span>
+                                    <span class="bg-green-50 text-green-800 text-xs px-2 py-1 rounded">Collaborative Filtering</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 통계 대시보드 -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                                                  <div class="flex items-start space-x-4">
+                              <div class="bg-green-100 p-3 rounded-lg">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                    <span class="text-green-600 font-bold text-sm">3</span>
+                                </div>
+                              </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">통계 및 인사이트</h4>
+                                <p class="text-gray-600 mb-3">
+                                    전체 교육생들의 선호도 트렌드, 인기 메뉴 순위, 시기별 만족도 분석 제공
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-green-50 text-green-800 text-xs px-2 py-1 rounded">Data Visualization</span>
+                                    <span class="bg-blue-50 text-blue-800 text-xs px-2 py-1 rounded">Trend Analysis</span>
+                                    <span class="bg-orange-50 text-orange-800 text-xs px-2 py-1 rounded">Business Intelligence</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 기술 아키텍처 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">기술 아키텍처</h3>
+                <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-md">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                        <!-- Frontend -->
+                        <div class="text-center p-6 bg-blue-50 rounded-lg">
+                            <h4 class="font-bold text-blue-800 mb-4">Frontend</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• Next.js 14</li>
+                                <li>• TypeScript</li>
+                                <li>• Tailwind CSS</li>
+                                <li>• Chart.js</li>
+                                <li>• PWA Support</li>
+                            </ul>
+                        </div>
+                        <!-- Backend -->
+                        <div class="text-center p-6 bg-green-50 rounded-lg">
+                            <h4 class="font-bold text-green-800 mb-4">Backend</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• Spring Boot 3.0</li>
+                                <li>• Spring Security</li>
+                                <li>• JPA/Hibernate</li>
+                                <li>• RESTful API</li>
+                                <li>• JWT Authentication</li>
+                            </ul>
+                        </div>
+                        <!-- Database -->
+                        <div class="text-center p-6 bg-purple-50 rounded-lg">
+                            <h4 class="font-bold text-purple-800 mb-4">Database</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• MySQL 8.0</li>
+                                <li>• Redis (Caching)</li>
+                                <li>• Connection Pooling</li>
+                                <li>• Database Migration</li>
+                                <li>• Backup Strategy</li>
+                            </ul>
+                        </div>
+                        <!-- DevOps -->
+                        <div class="text-center p-6 bg-orange-50 rounded-lg">
+                            <h4 class="font-bold text-orange-800 mb-4">DevOps</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• Kubernetes</li>
+                                <li>• Docker</li>
+                                <li>• Prometheus</li>
+                                <li>• Grafana</li>
+                                <li>• CI/CD Pipeline</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- 아키텍처 다이어그램 설명 -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h5 class="font-bold text-gray-800 mb-4">🏗️ 시스템 구성</h5>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <h6 class="font-semibold text-sm text-gray-700 mb-2">Client Layer</h6>
+                                <p class="text-xs text-gray-600">Next.js 기반 PWA로 모바일에서도 편리하게 사용 가능한 반응형 웹 앱</p>
+                            </div>
+                            <div>
+                                <h6 class="font-semibold text-sm text-gray-700 mb-2">Application Layer</h6>
+                                <p class="text-xs text-gray-600">Spring Boot 마이크로서비스로 구성된 확장 가능한 백엔드 시스템</p>
+                            </div>
+                            <div>
+                                <h6 class="font-semibold text-sm text-gray-700 mb-2">Infrastructure Layer</h6>
+                                <p class="text-xs text-gray-600">Kubernetes 클러스터에서 안정적으로 운영되는 컨테이너 기반 인프라</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 실사용자 영향 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">실사용자 영향 및 성과</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-xl p-6 border border-green-200">
+                        <h4 class="text-lg font-bold text-green-800 mb-4">📈 서비스 활용 현황</h4>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700">일일 활성 사용자</span>
+                                <span class="font-bold text-green-600">150+ 명</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700">총 평점 데이터 수집</span>
+                                <span class="font-bold text-green-600">2,500+ 건</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700">평균 예측 정확도</span>
+                                <span class="font-bold text-green-600">78%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700">사용자 만족도</span>
+                                <span class="font-bold text-green-600">4.2/5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-200">
+                        <h4 class="text-lg font-bold text-blue-800 mb-4">💬 사용자 피드백</h4>
+                        <div class="space-y-4">
+                            <div class="bg-white p-3 rounded border-l-4 border-blue-400">
+                                <p class="text-sm text-gray-700 italic">"매일 점심 메뉴 고민이 줄어들어서 정말 편해요!"</p>
+                                <p class="text-xs text-gray-500 mt-1">- SSAFY 13기 교육생 A</p>
+                            </div>
+                            <div class="bg-white p-3 rounded border-l-4 border-green-400">
+                                <p class="text-sm text-gray-700 italic">"예측이 꽤 정확해서 믿고 따라가고 있어요."</p>
+                                <p class="text-xs text-gray-500 mt-1">- SSAFY 13기 교육생 B</p>
+                            </div>
+                            <div class="bg-white p-3 rounded border-l-4 border-purple-400">
+                                <p class="text-sm text-gray-700 italic">"친구들과 함께 보면서 메뉴 정하는 재미가 있어요."</p>
+                                <p class="text-xs text-gray-500 mt-1">- SSAFY 13기 교육생 C</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 모니터링 및 운영 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">시스템 모니터링 & 운영</h3>
+                <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-md">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Prometheus 모니터링 -->
+                        <div class="text-center p-6 bg-red-50 rounded-lg">
+                            <div class="bg-red-100 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                                <span class="text-2xl">📊</span>
+                            </div>
+                            <h4 class="font-bold text-red-800 mb-3">Prometheus 모니터링</h4>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li>• API 응답 시간 추적</li>
+                                <li>• 시스템 리소스 사용률</li>
+                                <li>• 데이터베이스 성능 지표</li>
+                                <li>• 에러율 및 장애 감지</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Kubernetes 관리 -->
+                        <div class="text-center p-6 bg-blue-50 rounded-lg">
+                            <div class="bg-blue-100 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                                <span class="text-2xl">⚙️</span>
+                            </div>
+                            <h4 class="font-bold text-blue-800 mb-3">Kubernetes 클러스터</h4>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li>• Pod 자동 스케일링</li>
+                                <li>• 서비스 디스커버리</li>
+                                <li>• 롤링 업데이트</li>
+                                <li>• 헬스 체크 & 복구</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 실시간 알람 -->
+                        <div class="text-center p-6 bg-yellow-50 rounded-lg">
+                            <div class="bg-yellow-100 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                                <span class="text-2xl">🚨</span>
+                            </div>
+                            <h4 class="font-bold text-yellow-800 mb-3">실시간 알람 시스템</h4>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li>• 서비스 다운 감지</li>
+                                <li>• 이상 트래픽 알람</li>
+                                <li>• 데이터베이스 오류 감지</li>
+                                <li>• 성능 임계값 초과 알림</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 기술적 도전과 해결 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">기술적 도전과 해결</h3>
+                <div class="space-y-6">
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="text-2xl">⚡</span>
+                            <h4 class="text-xl font-bold text-red-600">도전 1: 점심시간 트래픽 집중 문제</h4>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h5 class="font-semibold text-gray-800 mb-3">상황</h5>
+                                <p class="text-gray-600 text-sm">
+                                    점심시간(12:00-13:00)에 전체 교육생들이 동시에 접속하여 서버 응답 시간이 급격히 증가하는 문제가 발생했습니다.
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-gray-800 mb-3">해결 방법</h5>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• Redis 캐싱으로 데이터베이스 부하 분산</li>
+                                    <li>• Kubernetes HPA로 Pod 자동 스케일링</li>
+                                    <li>• CDN 적용으로 정적 리소스 부하 감소</li>
+                                    <li>• 데이터베이스 커넥션 풀 최적화</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="text-2xl">🎯</span>
+                            <h4 class="text-xl font-bold text-blue-600">도전 2: 예측 정확도 향상</h4>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h5 class="font-semibold text-gray-800 mb-3">상황</h5>
+                                <p class="text-gray-600 text-sm">
+                                    초기 단순 평균 기반 예측 모델은 정확도가 60% 수준으로, 사용자들이 신뢰하기 어려운 수준이었습니다.
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-gray-800 mb-3">해결 방법</h5>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• 날씨, 요일, 시기별 가중치 적용</li>
+                                    <li>• 개인별 선호도 패턴 학습 알고리즘 도입</li>
+                                    <li>• 실시간 피드백 반영 시스템 구축</li>
+                                    <li>• A/B 테스트를 통한 모델 성능 비교</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 향후 발전 방향 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">향후 발전 계획</h3>
+                <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-md">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-bold text-blue-800 mb-4">단기 계획 (3개월)</h4>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start space-x-2">
+                                    <span class="text-blue-500 text-lg">•</span>
+                                    <span class="text-sm"><strong>알림 기능 추가:</strong> 좋아하는 메뉴 출시 시 push 알림</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <span class="text-blue-500 text-lg">•</span>
+                                    <span class="text-sm"><strong>소셜 기능 강화:</strong> 친구 따라 먹기, 그룹 추천</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <span class="text-blue-500 text-lg">•</span>
+                                    <span class="text-sm"><strong>데이터 시각화:</strong> 개인별 식습관 분석 리포트</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-green-800 mb-4">장기 계획 (6개월+)</h4>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start space-x-2">
+                                    <span class="text-green-500 text-lg">•</span>
+                                    <span class="text-sm"><strong>AI 모델 고도화:</strong> 딥러닝 기반 추천 시스템</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <span class="text-green-500 text-lg">•</span>
+                                    <span class="text-sm"><strong>다른 캠퍼스 확장:</strong> SSAFY 전국 캠퍼스 적용</span>
+                                </li>
+                                <li class="flex items-start space-x-2">
+                                    <span class="text-green-500 text-lg">•</span>
+                                    <span class="text-sm"><strong>오픈 소스화:</strong> 다른 교육기관에서도 사용 가능</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 프로젝트 의미 -->
+            <section class="mb-16">
+                <div class="bg-gradient-to-r from-blue-100 to-green-100 rounded-xl p-8 border border-blue-200 text-center">
+                                                <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-yellow-600 font-bold text-xl">★</span>
+                            </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">실사용자 프로젝트의 가치</h3>
+                    <p class="text-gray-600 leading-relaxed max-w-3xl mx-auto mb-6">
+                        SSABAB은 단순한 개발 프로젝트를 넘어서, <strong>실제 사용자들의 일상을 개선하는 서비스</strong>입니다. 
+                        매일 150명 이상의 SSAFY 교육생들이 사용하며, 그들의 점심시간 선택을 도와주고 있습니다. 
+                        데이터 기반의 의사결정과 지속적인 서비스 개선을 통해 사용자 만족도를 높이고, 
+                        실제 비즈니스 환경에서의 개발 경험을 쌓을 수 있었던 의미 있는 프로젝트입니다.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <span class="bg-blue-200 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">
+                            👥 실사용자 150+ 명
+                        </span>
+                        <span class="bg-green-200 text-green-800 text-sm font-medium px-4 py-2 rounded-full">
+                                                            • 데이터 기반 의사결정
+                        </span>
+                        <span class="bg-purple-200 text-purple-800 text-sm font-medium px-4 py-2 rounded-full">
+                                                            • Production 운영 경험
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- 푸터 -->
+        <footer class="text-center py-16">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="index.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    포트폴리오로 돌아가기
+                </a>
+            </div>
+            <p class="text-sm text-gray-500">
+                &copy; 2025 yooosh. All Rights Reserved.
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html> 

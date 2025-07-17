@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Toy Projects - yooosh 포트폴리오</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .font-logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-700">
+
+    <!-- 전체 페이지 컨테이너 -->
+    <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+        <!-- 네비게이션 -->
+        <nav class="py-8">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="font-logo text-2xl tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-sky-400">
+                    yooosh
+                </a>
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition-colors">← 포트폴리오로 돌아가기</a>
+            </div>
+        </nav>
+
+        <main>
+            <!-- 프로젝트 헤더 -->
+            <section class="text-center mb-16">
+                <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Web Toy Projects</h1>
+                <h2 class="text-xl text-gray-600 mb-6">웹 개발 기술 학습을 위한 소규모 프로젝트 모음</h2>
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">React</span>
+                    <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">Spring Boot</span>
+                    <span class="bg-purple-100 text-purple-800 text-sm font-medium px-4 py-2 rounded-full">Node.js</span>
+                    <span class="bg-orange-100 text-orange-800 text-sm font-medium px-4 py-2 rounded-full">Redis</span>
+                    <span class="bg-red-100 text-red-800 text-sm font-medium px-4 py-2 rounded-full">WebSocket</span>
+                </div>
+                <div class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-lg inline-block">
+                                            Category: Learning & Practice Projects
+                </div>
+            </section>
+
+            <!-- 프로젝트 개요 -->
+            <section class="mb-16">
+                <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+                    <div class="text-center mb-8">
+                        <span class="text-sm font-medium bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Category: Learning & Practice Projects</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">프로젝트 목적</h4>
+                            <p class="text-gray-600 leading-relaxed">
+                                웹 개발의 핵심 기술들을 체계적으로 학습하고 실무 역량을 향상시키기 위한 소규모 프로젝트 모음입니다. 
+                                각 프로젝트는 특정 기술 스택과 아키텍처 패턴을 중심으로 설계되어 점진적인 학습이 가능합니다.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">기술적 접근</h4>
+                            <ul class="text-gray-600 space-y-2">
+                                <li>• 단계별 복잡도 증가</li>
+                                <li>• 실무 중심 기술 스택</li>
+                                <li>• 확장 가능한 아키텍처</li>
+                                <li>• 모범 사례 적용</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 토이 프로젝트 목록 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-12">프로젝트 목록</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Todo App -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="text-center mb-4">
+                            <div class="bg-blue-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                                <span class="text-2xl">✅</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Todo App</h4>
+                            <p class="text-sm text-gray-500">할 일 관리 애플리케이션</p>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 text-center">
+                            React 기본기와 상태관리, CRUD 작업을 학습하기 위한 기초 프로젝트
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-blue-50 text-blue-800 text-xs px-2 py-1 rounded">React</span>
+                            <span class="bg-green-50 text-green-800 text-xs px-2 py-1 rounded">useState</span>
+                            <span class="bg-purple-50 text-purple-800 text-xs px-2 py-1 rounded">Local Storage</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-3 py-1 rounded-full">
+                                🚧 Planning
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Auth System -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="text-center mb-4">
+                            <div class="bg-green-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                                <span class="text-2xl">🔐</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Auth System</h4>
+                            <p class="text-sm text-gray-500">인증/인가 시스템</p>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 text-center">
+                            JWT 기반 인증, OAuth, 권한 관리 등 보안 관련 기술을 학습
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-green-50 text-green-800 text-xs px-2 py-1 rounded">Spring Security</span>
+                            <span class="bg-blue-50 text-blue-800 text-xs px-2 py-1 rounded">JWT</span>
+                            <span class="bg-purple-50 text-purple-800 text-xs px-2 py-1 rounded">OAuth 2.0</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-3 py-1 rounded-full">
+                                🚧 Planning
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Blog Platform -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="text-center mb-4">
+                            <div class="bg-purple-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                                <span class="text-2xl">📝</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Blog Platform</h4>
+                            <p class="text-sm text-gray-500">개인 블로그 플랫폼</p>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 text-center">
+                            Markdown 에디터, 태그 시스템, 검색 기능이 있는 블로그 플랫폼
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-blue-50 text-blue-800 text-xs px-2 py-1 rounded">React</span>
+                            <span class="bg-green-50 text-green-800 text-xs px-2 py-1 rounded">Spring Boot</span>
+                            <span class="bg-purple-50 text-purple-800 text-xs px-2 py-1 rounded">Markdown</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-3 py-1 rounded-full">
+                                🚧 Planning
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Board System -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="text-center mb-4">
+                            <div class="bg-orange-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                                <span class="text-2xl">💬</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Board System</h4>
+                            <p class="text-sm text-gray-500">게시판 시스템</p>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 text-center">
+                            페이징, 검색, 댓글, 파일 업로드 등 게시판 핵심 기능 구현
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-blue-50 text-blue-800 text-xs px-2 py-1 rounded">JPA</span>
+                            <span class="bg-green-50 text-green-800 text-xs px-2 py-1 rounded">Pagination</span>
+                            <span class="bg-orange-50 text-orange-800 text-xs px-2 py-1 rounded">File Upload</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-3 py-1 rounded-full">
+                                🚧 Planning
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Shop -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="text-center mb-4">
+                            <div class="bg-red-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                                <span class="text-2xl">🛒</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Shop</h4>
+                            <p class="text-sm text-gray-500">온라인 쇼핑몰</p>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 text-center">
+                            상품 관리, 장바구니, 결제 시스템, 주문 관리 등 이커머스 핵심 기능
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-red-50 text-red-800 text-xs px-2 py-1 rounded">Payment API</span>
+                            <span class="bg-blue-50 text-blue-800 text-xs px-2 py-1 rounded">Cart System</span>
+                            <span class="bg-green-50 text-green-800 text-xs px-2 py-1 rounded">Order Management</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-3 py-1 rounded-full">
+                                🚧 Planning
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Video Platform -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="text-center mb-4">
+                            <div class="bg-yellow-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                                <span class="text-2xl">🎥</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Video Platform</h4>
+                            <p class="text-sm text-gray-500">동영상 스트리밍 플랫폼</p>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 text-center">
+                            Redis 캐싱, CDN 활용, 비디오 스트리밍 최적화 기술 학습
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-red-50 text-red-800 text-xs px-2 py-1 rounded">Redis</span>
+                            <span class="bg-blue-50 text-blue-800 text-xs px-2 py-1 rounded">CDN</span>
+                            <span class="bg-yellow-50 text-yellow-800 text-xs px-2 py-1 rounded">Video Streaming</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-3 py-1 rounded-full">
+                                🚧 Planning
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Chat System -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md hover:shadow-lg transition-all duration-300">
+                        <div class="text-center mb-4">
+                            <div class="bg-indigo-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                                <span class="text-2xl">💬</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-900">Chat System</h4>
+                            <p class="text-sm text-gray-500">실시간 채팅 시스템</p>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4 text-center">
+                            WebSocket, Redis Pub/Sub을 활용한 실시간 다중 채팅 시스템
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-2 mb-4">
+                            <span class="bg-indigo-50 text-indigo-800 text-xs px-2 py-1 rounded">WebSocket</span>
+                            <span class="bg-red-50 text-red-800 text-xs px-2 py-1 rounded">Redis Pub/Sub</span>
+                            <span class="bg-green-50 text-green-800 text-xs px-2 py-1 rounded">Real-time</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-3 py-1 rounded-full">
+                                🚧 Planning
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 학습 로드맵 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">학습 로드맵</h3>
+                <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-md">
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-blue-100 p-3 rounded-full">
+                                <span class="text-blue-600 font-bold text-sm">1</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-gray-900">기초 단계 (Todo → Auth → Blog)</h4>
+                                <p class="text-gray-600 text-sm">React 기본기, 상태관리, 인증 시스템, 콘텐츠 관리 학습</p>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">Component Design</span>
+                                    <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">State Management</span>
+                                    <span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded">Authentication</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-green-100 p-3 rounded-full">
+                                <span class="text-green-600 font-bold text-sm">2</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-gray-900">중급 단계 (Board → Shop)</h4>
+                                <p class="text-gray-600 text-sm">복잡한 데이터 관리, 파일 처리, 결제 시스템 학습</p>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded">File Upload</span>
+                                    <span class="bg-red-100 text-red-700 text-xs px-2 py-1 rounded">Payment Integration</span>
+                                    <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">Complex UI</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-purple-100 p-3 rounded-full">
+                                <span class="text-purple-600 font-bold text-sm">3</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-gray-900">고급 단계 (Video → Chat)</h4>
+                                <p class="text-gray-600 text-sm">성능 최적화, 실시간 통신, 대용량 데이터 처리</p>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="bg-red-100 text-red-700 text-xs px-2 py-1 rounded">Redis Caching</span>
+                                    <span class="bg-indigo-100 text-indigo-700 text-xs px-2 py-1 rounded">WebSocket</span>
+                                    <span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded">CDN Optimization</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Coming Soon -->
+            <section class="mb-16">
+                <div class="bg-gradient-to-r from-blue-100 to-green-100 rounded-xl p-8 border border-blue-200 text-center">
+                                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <span class="text-blue-600 font-bold">3</span>
+                                </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">개발 예정</h3>
+                    <p class="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-6">
+                        웹 개발의 핵심 기술들을 체계적으로 학습하기 위해 각 토이 프로젝트를 단계별로 진행할 예정입니다. 
+                        기초부터 고급 기술까지, 실무에서 바로 활용할 수 있는 수준의 프로젝트로 개발하겠습니다.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <span class="bg-blue-200 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">
+                            📚 Step-by-Step Learning
+                        </span>
+                        <span class="bg-green-200 text-green-800 text-sm font-medium px-4 py-2 rounded-full">
+                            • Best Practices
+                        </span>
+                        <span class="bg-purple-200 text-purple-800 text-sm font-medium px-4 py-2 rounded-full">
+                            • Production Ready
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- 푸터 -->
+        <footer class="text-center py-16">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="index.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    포트폴리오로 돌아가기
+                </a>
+            </div>
+            <p class="text-sm text-gray-500">
+                &copy; 2025 yooosh. All Rights Reserved.
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html> 

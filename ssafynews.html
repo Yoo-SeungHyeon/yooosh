@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSAFYNEWS - yooosh 포트폴리오</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .font-logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-700">
+
+    <!-- 전체 페이지 컨테이너 -->
+    <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+        <!-- 네비게이션 -->
+        <nav class="py-8">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="font-logo text-2xl tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-sky-400">
+                    yooosh
+                </a>
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition-colors">← 포트폴리오로 돌아가기</a>
+            </div>
+        </nav>
+
+        <main>
+            <!-- 프로젝트 헤더 -->
+            <section class="text-center mb-16">
+                <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">SSAFYNEWS</h1>
+                <h2 class="text-xl text-gray-600 mb-6">AI 기반 맞춤형 뉴스 추천 및 챗봇 서비스</h2>
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">Vue.js</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">Django</span>
+                    <span class="bg-purple-100 text-purple-800 text-sm font-medium px-4 py-2 rounded-full">PostgreSQL</span>
+                    <span class="bg-orange-100 text-orange-800 text-sm font-medium px-4 py-2 rounded-full">Kafka</span>
+                    <span class="bg-gray-100 text-gray-800 text-sm font-medium px-4 py-2 rounded-full">Elasticsearch</span>
+                    <span class="bg-red-100 text-red-800 text-sm font-medium px-4 py-2 rounded-full">Ollama</span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4 mb-6">
+                    <div class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-lg">
+                        ✅ Status: Completed
+                    </div>
+                    <div class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-lg">
+                        📅 2025.05.22 - 2025.05.27
+                    </div>
+                    <div class="bg-purple-100 text-purple-800 text-sm font-medium px-4 py-2 rounded-lg">
+                        👥 2명 (팀장, Full Stack)
+                    </div>
+                </div>
+                <a href="https://github.com/Yoo-SeungHyeon/SSAFY-1st-half-pjt" target="_blank" class="inline-flex items-center space-x-2 bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path></svg>
+                    <span>GitHub 저장소</span>
+                </a>
+            </section>
+
+            <!-- 프로젝트 개요 -->
+            <section class="mb-16">
+                <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">목표</h4>
+                            <p class="text-gray-600 leading-relaxed">
+                                대용량 뉴스 데이터를 실시간으로 수집, 처리하여 사용자 맞춤형 추천 서비스를 제공하고, 
+                                AI 기반 챗봇을 통해 뉴스 관련 질의응답 서비스를 구현하는 것이 목표입니다.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">기술적 특징</h4>
+                            <ul class="text-gray-600 space-y-2">
+                                <li>• 실시간 데이터 파이프라인</li>
+                                <li>• 벡터 기반 유사도 검색</li>
+                                <li>• 로컬 AI 모델 활용</li>
+                                <li>• 컨테이너 기반 아키텍처</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 기술 선정 이유 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">기술 선정 이유</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="text-2xl">⚡</span>
+                            <h4 class="text-lg font-bold text-gray-900">Apache Kafka</h4>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            Docker를 활용한 Zookeeper 없는 브로커를 경험해보기 위해 사용하였습니다. 
+                            실시간 데이터 처리와 마이크로서비스 간 비동기 통신을 구현했습니다.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="text-2xl">🔍</span>
+                            <h4 class="text-lg font-bold text-gray-900">Elasticsearch</h4>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            검색에 자동완성, 유사 검색어 기능을 제공하기 위해 도입하였습니다. 
+                            사용자 경험 향상을 위한 고성능 검색 엔진으로 활용했습니다.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="text-2xl">🐘</span>
+                            <h4 class="text-lg font-bold text-gray-900">PostgreSQL</h4>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            pgvector를 통해 유사 기사를 코사인 유사도로 제공하기 위해 도입하였습니다. 
+                            벡터 데이터베이스 기능을 활용한 AI 기반 추천 시스템을 구현했습니다.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="text-2xl">🤖</span>
+                            <h4 class="text-lg font-bold text-gray-900">Ollama</h4>
+                        </div>
+                        <p class="text-gray-600 text-sm">
+                            Open AI API를 제공받았으나, 추후 배포와 비용 절감을 위해 Ollama를 사용했습니다. 
+                            로컬에서 동작하는 AI 모델로 자체적인 AI 서비스를 구축했습니다.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 핵심 기능 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">핵심 기능</h3>
+                <div class="space-y-6">
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-100 p-3 rounded-lg">
+                                <span class="text-2xl">📰</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">뉴스 수집 및 전처리</h4>
+                                <p class="text-gray-600 mb-3">RSS를 통한 자동 뉴스 수집 시스템과 Kafka Consumer를 통한 실시간 데이터 전처리</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-orange-50 text-orange-800 text-xs px-2 py-1 rounded">RSS 수집</span>
+                                    <span class="bg-purple-50 text-purple-800 text-xs px-2 py-1 rounded">Kafka Producer</span>
+                                    <span class="bg-green-50 text-green-800 text-xs px-2 py-1 rounded">데이터 정제</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-green-100 p-3 rounded-lg">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                <span class="text-blue-600 font-bold">Tech</span>
+                            </div>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">개인화 추천 시스템</h4>
+                                <p class="text-gray-600 mb-3">pgvector와 코사인 유사도를 활용한 유사 기사 추천 및 사용자 맞춤형 뉴스 제공</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-blue-50 text-blue-800 text-xs px-2 py-1 rounded">pgvector</span>
+                                    <span class="bg-purple-50 text-purple-800 text-xs px-2 py-1 rounded">코사인 유사도</span>
+                                    <span class="bg-green-50 text-green-800 text-xs px-2 py-1 rounded">개인화</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-purple-100 p-3 rounded-lg">
+                                <span class="text-2xl">🔍</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">고성능 검색 시스템</h4>
+                                <p class="text-gray-600 mb-3">Elasticsearch를 활용한 자동완성, 유사 검색어, 실시간 검색 기능</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-yellow-50 text-yellow-800 text-xs px-2 py-1 rounded">자동완성</span>
+                                    <span class="bg-blue-50 text-blue-800 text-xs px-2 py-1 rounded">유사검색</span>
+                                    <span class="bg-green-50 text-green-800 text-xs px-2 py-1 rounded">실시간 검색</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-red-100 p-3 rounded-lg">
+                                <span class="text-2xl">🤖</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">AI 챗봇 서비스</h4>
+                                <p class="text-gray-600 mb-3">Ollama를 활용한 로컬 AI 모델 기반의 뉴스 관련 질문 답변 시스템</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-red-50 text-red-800 text-xs px-2 py-1 rounded">Ollama</span>
+                                    <span class="bg-purple-50 text-purple-800 text-xs px-2 py-1 rounded">Local AI</span>
+                                    <span class="bg-green-50 text-green-800 text-xs px-2 py-1 rounded">Q&A 시스템</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 개발 과정의 문제와 해결 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">개발 과정의 문제 및 해결</h3>
+                <div class="space-y-8">
+                    <!-- 문제 1 -->
+                    <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-md">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <span class="text-2xl">🔗</span>
+                            <h4 class="text-xl font-bold text-red-600">문제 1: Docker 컨테이너 간 네트워킹 이슈</h4>
+                        </div>
+                        <div class="mb-6">
+                            <h5 class="font-semibold text-gray-800 mb-3">상황</h5>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Docker Compose로 frontend와 backend 컨테이너를 동시에 올렸을 때, 브라우저에서 backend 컨테이너를 찾지 못하는 문제가 발생했습니다. 
+                                브라우저 입장에서는 backend가 localhost:8000에 존재하지만, frontend 컨테이너 입장에서는 같은 네트워크이므로 컨테이너명으로 접근해야 했습니다.
+                            </p>
+                        </div>
+                        <div class="mb-6">
+                            <h5 class="font-semibold text-gray-800 mb-3">해결 방법</h5>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-gray-700 mb-3">
+                                    <strong>Nginx 프록시를 통한 라우팅 해결:</strong>
+                                </p>
+                                <ul class="text-sm text-gray-600 space-y-2">
+                                    <li>• 기존: 절대 경로 (http://localhost:8000 또는 http://back:8000)</li>
+                                    <li>• 해결: 상대 경로 (/api)로 변경</li>
+                                    <li>• Nginx에서 /api 요청을 backend로 라우팅 처리</li>
+                                    <li>• 브라우저와 컨테이너 간 네트워킹 문제 완전 해결</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-gray-800 mb-3">학습 포인트</h5>
+                            <p class="text-gray-600 text-sm">
+                                Docker 네트워킹과 프록시 서버의 중요성을 깨닫게 되었으며, 
+                                마이크로서비스 아키텍처에서의 서비스 디스커버리 개념을 실제로 경험할 수 있었습니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 문제 2 -->
+                    <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-md">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <span class="text-2xl">📦</span>
+                            <h4 class="text-xl font-bold text-red-600">문제 2: Frontend Build 환경변수 하드코딩 이슈</h4>
+                        </div>
+                        <div class="mb-6">
+                            <h5 class="font-semibold text-gray-800 mb-3">상황</h5>
+                            <p class="text-gray-600 leading-relaxed">
+                                Frontend를 배포할 때 최적화와 용량 축소를 위해 build를 통해 dist 폴더를 배포하는 방식을 채택했으나, 
+                                build 과정에서 환경변수가 하드코딩되어 container 실행 시 동적으로 변경할 수 없는 문제가 발생했습니다.
+                            </p>
+                        </div>
+                        <div class="mb-6">
+                            <h5 class="font-semibold text-gray-800 mb-3">원인 분석</h5>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p class="text-gray-700 mb-2">Vue.js build 과정에서:</p>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• 환경변수 (VITE_API_BASE_URL 등)가 빌드 타임에 하드코딩됨</li>
+                                    <li>• dist 폴더의 JS 파일에 실제 URL이 문자열로 박혀버림</li>
+                                    <li>• Docker args나 environment 옵션이 적용되지 않음</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-gray-800 mb-3">대안 및 학습</h5>
+                            <p class="text-gray-600 text-sm">
+                                환경변수를 런타임에 활용하려면 Node.js 기반 배포나 환경변수 주입 스크립트 등이 필요함을 알게 되었습니다. 
+                                Build 최적화와 환경 유연성 사이의 트레이드오프를 경험했습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 담당 역할 및 기여 -->
+            <section class="mb-16">
+                <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">담당 역할 및 기여</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-semibold text-blue-600 mb-4">🏆 담당 역할</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-green-500">●</span>
+                                    <span><strong>팀장</strong> - 프로젝트 리딩 및 일정 관리</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-blue-500">●</span>
+                                    <span><strong>Full Stack Developer</strong></span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-purple-500">●</span>
+                                    <span><strong>DevOps Engineer</strong> - Docker 인프라 구축</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-green-600 mb-4">주요 기여</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-green-500">✓</span>
+                                    <span>Vue.js 컴포넌트 설계 및 Pinia 상태관리</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-green-500">✓</span>
+                                    <span>Django REST API 설계 및 구현</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-green-500">✓</span>
+                                    <span>Elasticsearch 검색 기능 구현</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-green-500">✓</span>
+                                    <span>Ollama AI 챗봇 시스템 개발</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <span class="text-green-500">✓</span>
+                                    <span>Docker Compose 전체 인프라 구성</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 시스템 아키텍처 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">시스템 아키텍처</h3>
+                <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-md">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="text-center p-6 bg-green-50 rounded-lg">
+                            <h4 class="font-bold text-green-800 mb-4">Frontend</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• Vue.js 3</li>
+                                <li>• Pinia (상태관리)</li>
+                                <li>• Vite (빌드도구)</li>
+                                <li>• Tailwind CSS</li>
+                            </ul>
+                        </div>
+                        <div class="text-center p-6 bg-blue-50 rounded-lg">
+                            <h4 class="font-bold text-blue-800 mb-4">Backend</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• Django REST Framework</li>
+                                <li>• Python</li>
+                                <li>• JWT 인증</li>
+                                <li>• Swagger API</li>
+                            </ul>
+                        </div>
+                        <div class="text-center p-6 bg-purple-50 rounded-lg">
+                            <h4 class="font-bold text-purple-800 mb-4">Database & Search</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• PostgreSQL + pgvector</li>
+                                <li>• Elasticsearch</li>
+                                <li>• Redis (캐싱)</li>
+                            </ul>
+                        </div>
+                        <div class="text-center p-6 bg-orange-50 rounded-lg">
+                            <h4 class="font-bold text-orange-800 mb-4">Infrastructure</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• Docker & Docker Compose</li>
+                                <li>• Kafka (메시지 큐)</li>
+                                <li>• Nginx (프록시)</li>
+                                <li>• Ollama (Local AI)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 성과 및 배운 점 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">성과 및 학습 포인트</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-green-50 rounded-xl p-6 border border-green-200">
+                        <h4 class="text-lg font-bold text-green-800 mb-4">🎉 주요 성과</h4>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start space-x-2">
+                                <span class="text-green-500 text-lg">✓</span>
+                                <span>실제 뉴스 RSS 데이터를 활용한 실용적인 서비스 구현</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-green-500 text-lg">✓</span>
+                                <span>AI 기반 개인화 추천 시스템 성공적 구축</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-green-500 text-lg">✓</span>
+                                <span>Docker 기반 MSA 아키텍처 완전 구현</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-green-500 text-lg">✓</span>
+                                <span>로컬 AI 모델(Ollama) 활용 경험</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                        <h4 class="text-lg font-bold text-blue-800 mb-4">📚 학습 포인트</h4>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start space-x-2">
+                                <span class="text-blue-500 text-lg">•</span>
+                                <span>Docker 네트워킹과 컨테이너 간 통신 메커니즘</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-blue-500 text-lg">•</span>
+                                <span>Kafka를 활용한 실시간 데이터 파이프라인 구축</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-blue-500 text-lg">•</span>
+                                <span>Elasticsearch 고성능 검색 시스템 설계</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-blue-500 text-lg">•</span>
+                                <span>pgvector를 활용한 벡터 기반 추천 시스템</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- 푸터 -->
+        <footer class="text-center py-16">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="index.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    포트폴리오로 돌아가기
+                </a>
+                <a href="https://github.com/Yoo-SeungHyeon/SSAFY-1st-half-pjt" target="_blank" class="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors">
+                    GitHub에서 보기
+                </a>
+            </div>
+            <p class="text-sm text-gray-500">
+                &copy; 2025 yooosh. All Rights Reserved.
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html> 

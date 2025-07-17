@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live-Casting - yooosh 포트폴리오</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .font-logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-700">
+
+    <!-- 전체 페이지 컨테이너 -->
+    <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+        <!-- 네비게이션 -->
+        <nav class="py-8">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="font-logo text-2xl tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-sky-400">
+                    yooosh
+                </a>
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition-colors">← 포트폴리오로 돌아가기</a>
+            </div>
+        </nav>
+
+        <main>
+            <!-- 프로젝트 헤더 -->
+            <section class="text-center mb-16">
+                <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Live-Casting</h1>
+                <h2 class="text-xl text-gray-600 mb-6">라이브캐스팅 - MSA 기반 인터랙티브 방송 플랫폼</h2>
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">Spring Boot</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">React</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">MSA</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">Kubernetes</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">Kafka</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">Redis</span>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">WebSocket</span>
+                </div>
+                <div class="bg-orange-100 text-orange-800 text-sm font-medium px-4 py-2 rounded-lg inline-block">
+                    📋 Status: Planning & Design Phase
+                </div>
+            </section>
+
+            <!-- 프로젝트 개요 -->
+            <section class="mb-16">
+                <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-md">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">프로젝트 개요</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        크리에이터가 팬들과 실시간으로 소통하며 자신의 상품을 판매하고, 특별 이벤트를 통해 팬덤을 강화할 수 있는 MSA 기반의 인터랙티브 방송 플랫폼입니다. 
+                        실시간 채팅, 좋아요, 구독, 선착순 이벤트 등의 다양한 기능을 통해 크리에이터와 팬들이 더욱 밀접하게 연결될 수 있도록 설계된 혁신적인 플랫폼입니다.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <h4 class="font-bold text-blue-800 mb-2">실시간 소통</h4>
+                            <p class="text-sm text-gray-600">라이브 채팅과 실시간 반응으로 크리에이터와 팬 간의 즉석 소통</p>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-lg">
+                            <h4 class="font-bold text-green-800 mb-2">라이브 커머스</h4>
+                            <p class="text-sm text-gray-600">방송 중 직접 상품을 판매하고 구매할 수 있는 통합 쇼핑 시스템</p>
+                        </div>
+                        <div class="text-center p-4 bg-purple-50 rounded-lg">
+                            <h4 class="font-bold text-purple-800 mb-2">특별 이벤트</h4>
+                            <p class="text-sm text-gray-600">선착순 한정판 굿즈 판매 등 팬덤 강화 이벤트</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 페르소나 분석 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-10">Target User Analysis</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Content Creator -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                        <div class="text-center mb-4">
+                            <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <span class="text-pink-600 font-bold text-lg">C</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-pink-600">Content Creator</h4>
+                            <p class="text-sm text-gray-600 mt-2">크리에이터</p>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <h5 class="font-bold text-gray-800 mb-2">목표</h5>
+                                <p class="text-sm text-gray-600">
+                                    라이브 방송을 통한 팬 커뮤니티 구축과 상품 판매를 통한 수익 창출. 실시간 상호작용을 통해 브랜드 가치 향상을 추구합니다.
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-800 mb-2">주요 활동</h5>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• 라이브 방송 관리</li>
+                                    <li>• 실시간 커뮤니케이션</li>
+                                    <li>• 성과 지표 분석</li>
+                                    <li>• 프로모션 이벤트 운영</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Viewer -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                        <div class="text-center mb-4">
+                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <span class="text-blue-600 font-bold text-lg">V</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-blue-600">Active Viewer</h4>
+                            <p class="text-sm text-gray-600 mt-2">시청자</p>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <h5 class="font-bold text-gray-800 mb-2">목표</h5>
+                                <p class="text-sm text-gray-600">
+                                    선호하는 크리에이터의 콘텐츠를 실시간으로 시청하고 적극적인 참여를 통해 커뮤니티 경험을 향상시키고자 합니다.
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-800 mb-2">주요 활동</h5>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• 고화질 스트리밍 시청</li>
+                                    <li>• 실시간 참여 및 반응</li>
+                                    <li>• 구독 및 알림 설정</li>
+                                    <li>• 이벤트 참여</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Platform Engineer -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                        <div class="text-center mb-4">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <span class="text-green-600 font-bold text-lg">E</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-green-600">Platform Engineer</h4>
+                            <p class="text-sm text-gray-600 mt-2">플랫폼 엔지니어</p>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <h5 class="font-bold text-gray-800 mb-2">목표</h5>
+                                <p class="text-sm text-gray-600">
+                                    안정적이고 확장 가능한 마이크로서비스 아키텍처를 구축하여 대규모 트래픽 처리와 서비스 신뢰성을 보장합니다.
+                                </p>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-800 mb-2">주요 활동</h5>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• 마이크로서비스 개발 및 배포</li>
+                                    <li>• 시스템 모니터링 및 관리</li>
+                                    <li>• 로그 분석 및 성능 최적화</li>
+                                    <li>• 트래픽 제어 및 장애 대응</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 핵심 기능 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">핵심 기능</h3>
+                <div class="space-y-8">
+                    <!-- 좋아요 기능 -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-red-100 p-3 rounded-lg">
+                                <span class="text-2xl">❤️</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">실시간 '좋아요' 기능</h4>
+                                <p class="text-gray-600 mb-4">
+                                    사용자는 라이브 방송 또는 VOD 영상에 '좋아요'를 누를 수 있으며, 좋아요 수는 실시간으로 집계되어 표시됩니다.
+                                </p>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+                                    <span class="bg-blue-50 text-blue-800 px-2 py-1 rounded">React UI</span>
+                                    <span class="bg-green-50 text-green-800 px-2 py-1 rounded">Spring Boot</span>
+                                    <span class="bg-purple-50 text-purple-800 px-2 py-1 rounded">Kafka Events</span>
+                                    <span class="bg-orange-50 text-orange-800 px-2 py-1 rounded">Redis Counter</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 구독 기능 -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-100 p-3 rounded-lg">
+                                <span class="text-2xl">🔔</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">크리에이터 '구독' 기능</h4>
+                                <p class="text-gray-600 mb-4">
+                                    사용자는 특정 크리에이터 채널을 구독할 수 있으며, 구독 발생 시 크리에이터에게 즉시 알림이 전송됩니다.
+                                </p>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+                                    <span class="bg-blue-50 text-blue-800 px-2 py-1 rounded">MySQL 관계</span>
+                                    <span class="bg-green-50 text-green-800 px-2 py-1 rounded">Kafka Events</span>
+                                    <span class="bg-purple-50 text-purple-800 px-2 py-1 rounded">알림 서비스</span>
+                                    <span class="bg-orange-50 text-orange-800 px-2 py-1 rounded">트랜잭션</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 실시간 채팅 -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-green-100 p-3 rounded-lg">
+                                <span class="text-2xl">💬</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">실시간 채팅 기능</h4>
+                                <p class="text-gray-600 mb-4">
+                                    라이브 방송 중 모든 참여자는 WebSocket을 통해 실시간으로 메시지를 주고받을 수 있습니다.
+                                </p>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+                                    <span class="bg-blue-50 text-blue-800 px-2 py-1 rounded">WebSocket</span>
+                                    <span class="bg-green-50 text-green-800 px-2 py-1 rounded">Kafka Queue</span>
+                                    <span class="bg-purple-50 text-purple-800 px-2 py-1 rounded">Cassandra</span>
+                                    <span class="bg-orange-50 text-orange-800 px-2 py-1 rounded">Chat Service</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 선착순 이벤트 -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-purple-100 p-3 rounded-lg">
+                                <span class="text-2xl">🏃‍♂️</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">선착순 이벤트 처리</h4>
+                                <p class="text-gray-600 mb-4">
+                                    크리에이터가 라이브 중 "선착순 N명" 이벤트를 시작할 수 있으며, 수만 명의 동시 요청에도 정확하게 선착순 N명만 처리됩니다.
+                                </p>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+                                    <span class="bg-blue-50 text-blue-800 px-2 py-1 rounded">Redis INCR</span>
+                                    <span class="bg-green-50 text-green-800 px-2 py-1 rounded">Atomic Operations</span>
+                                    <span class="bg-purple-50 text-purple-800 px-2 py-1 rounded">동시성 해결</span>
+                                    <span class="bg-orange-50 text-orange-800 px-2 py-1 rounded">Event Service</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 기술 아키텍처 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">기술 아키텍처</h3>
+                <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-md">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Frontend -->
+                        <div class="text-center p-6 bg-blue-50 rounded-lg">
+                            <h4 class="font-bold text-blue-800 mb-4">Frontend</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• React</li>
+                                <li>• WebSocket</li>
+                                <li>• Real-time UI</li>
+                            </ul>
+                        </div>
+                        <!-- Backend -->
+                        <div class="text-center p-6 bg-green-50 rounded-lg">
+                            <h4 class="font-bold text-green-800 mb-4">Backend (MSA)</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• Spring Boot Services</li>
+                                <li>• API Gateway</li>
+                                <li>• Microservices</li>
+                            </ul>
+                        </div>
+                        <!-- Message Queue -->
+                        <div class="text-center p-6 bg-purple-50 rounded-lg">
+                            <h4 class="font-bold text-purple-800 mb-4">Message Queue</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• Apache Kafka</li>
+                                <li>• Event-Driven</li>
+                                <li>• Async Processing</li>
+                            </ul>
+                        </div>
+                        <!-- Database -->
+                        <div class="text-center p-6 bg-orange-50 rounded-lg">
+                            <h4 class="font-bold text-orange-800 mb-4">Database</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• MySQL (관계형)</li>
+                                <li>• MongoDB/Cassandra (NoSQL)</li>
+                                <li>• Redis (캐싱)</li>
+                            </ul>
+                        </div>
+                        <!-- Infrastructure -->
+                        <div class="text-center p-6 bg-red-50 rounded-lg">
+                            <h4 class="font-bold text-red-800 mb-4">Infrastructure</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• Kubernetes</li>
+                                <li>• Docker</li>
+                                <li>• Cloud (AWS/GCP)</li>
+                            </ul>
+                        </div>
+                        <!-- Monitoring -->
+                        <div class="text-center p-6 bg-yellow-50 rounded-lg">
+                            <h4 class="font-bold text-yellow-800 mb-4">Monitoring</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• Prometheus</li>
+                                <li>• Grafana</li>
+                                <li>• ELK Stack</li>
+                                <li>• Istio</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 개발 계획 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">개발 계획</h3>
+                <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-md">
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-blue-100 p-2 rounded-full">
+                                <span class="text-blue-600 font-bold text-sm">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Phase 1: 기본 인프라 구축</h4>
+                                <p class="text-gray-600 text-sm">Kubernetes 클러스터 구성, 기본 MSA 아키텍처 설계</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-green-100 p-2 rounded-full">
+                                <span class="text-green-600 font-bold text-sm">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Phase 2: 핵심 기능 개발</h4>
+                                <p class="text-gray-600 text-sm">실시간 채팅, 좋아요, 구독 기능 구현</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-purple-100 p-2 rounded-full">
+                                <span class="text-purple-600 font-bold text-sm">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Phase 3: 고급 기능 구현</h4>
+                                <p class="text-gray-600 text-sm">선착순 이벤트, 라이브 커머스 기능 추가</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-orange-100 p-2 rounded-full">
+                                <span class="text-orange-600 font-bold text-sm">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Phase 4: 모니터링 & 최적화</h4>
+                                <p class="text-gray-600 text-sm">성능 최적화, 모니터링 시스템 구축</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- 푸터 -->
+        <footer class="text-center py-16">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="index.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    포트폴리오로 돌아가기
+                </a>
+            </div>
+            <p class="text-sm text-gray-500">
+                &copy; 2025 yooosh. All Rights Reserved.
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html> 

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentifl - yooosh 포트폴리오</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .font-logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-700">
+
+    <!-- 전체 페이지 컨테이너 -->
+    <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+        <!-- 네비게이션 -->
+        <nav class="py-8">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="font-logo text-2xl tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-sky-400">
+                    yooosh
+                </a>
+                <a href="index.html" class="text-gray-600 hover:text-blue-600 transition-colors">← 포트폴리오로 돌아가기</a>
+            </div>
+        </nav>
+
+        <main>
+            <!-- 프로젝트 헤더 -->
+            <section class="text-center mb-16">
+                <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Sentifl</h1>
+                <h2 class="text-xl text-gray-600 mb-6">BGM 생성 AI 블로그 플랫폼</h2>
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">React</span>
+                    <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">Spring Boot</span>
+                    <span class="bg-purple-100 text-purple-800 text-sm font-medium px-4 py-2 rounded-full">FastAPI</span>
+                    <span class="bg-orange-100 text-orange-800 text-sm font-medium px-4 py-2 rounded-full">AWS</span>
+                    <span class="bg-red-100 text-red-800 text-sm font-medium px-4 py-2 rounded-full">Keras</span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4 mb-6">
+                    <div class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-lg">
+                        🔄 Status: Refactoring (졸업 작품)
+                    </div>
+                    <div class="bg-purple-100 text-purple-800 text-sm font-medium px-4 py-2 rounded-lg">
+                        🎵 Category: AI Music Generation
+                    </div>
+                </div>
+            </section>
+
+            <!-- 프로젝트 개요 -->
+            <section class="mb-16">
+                <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">리팩토링 계획</h4>
+                            <p class="text-gray-600 leading-relaxed">
+                                졸업 작품으로 개발된 BGM 생성 AI 서비스를 현대적인 기술 스택과 아키텍처로 재구성하여 
+                                확장성과 유지보수성을 향상시키는 프로젝트입니다.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">개선 목표</h4>
+                            <ul class="text-gray-600 space-y-2">
+                                <li>• 레거시 코드 현대화</li>
+                                <li>• AI 모델 성능 최적화</li>
+                                <li>• 사용자 경험 개선</li>
+                                <li>• 클라우드 네이티브 전환</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 핵심 기능 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">핵심 기능</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- AI 음악 생성 -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-purple-100 p-3 rounded-lg">
+                                <span class="text-2xl">🎼</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">AI 음악 생성</h4>
+                                <p class="text-gray-600 mb-3">
+                                    텍스트 설명이나 감정 키워드를 입력하면 딥러닝 모델이 그에 맞는 BGM을 자동 생성
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-purple-50 text-purple-800 text-xs px-2 py-1 rounded">Keras</span>
+                                    <span class="bg-blue-50 text-blue-800 text-xs px-2 py-1 rounded">RNN/LSTM</span>
+                                    <span class="bg-green-50 text-green-800 text-xs px-2 py-1 rounded">MIDI Generation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 감정 분석 -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-100 p-3 rounded-lg">
+                                <span class="text-2xl">😊</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">감정 분석 엔진</h4>
+                                <p class="text-gray-600 mb-3">
+                                    텍스트의 감정을 분석하여 기쁨, 슬픔, 평온 등의 감정에 맞는 음악 스타일 결정
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-blue-50 text-blue-800 text-xs px-2 py-1 rounded">NLP</span>
+                                    <span class="bg-green-50 text-green-800 text-xs px-2 py-1 rounded">Sentiment Analysis</span>
+                                    <span class="bg-purple-50 text-purple-800 text-xs px-2 py-1 rounded">FastAPI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 블로그 시스템 -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-green-100 p-3 rounded-lg">
+                                <span class="text-2xl">📝</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">인터랙티브 블로그</h4>
+                                <p class="text-gray-600 mb-3">
+                                    생성된 BGM과 함께 블로그 포스트 작성, 음악 재생이 가능한 리치 에디터 제공
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-blue-50 text-blue-800 text-xs px-2 py-1 rounded">React</span>
+                                    <span class="bg-green-50 text-green-800 text-xs px-2 py-1 rounded">Rich Editor</span>
+                                    <span class="bg-orange-50 text-orange-800 text-xs px-2 py-1 rounded">Audio Player</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 음악 라이브러리 -->
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-orange-100 p-3 rounded-lg">
+                                <span class="text-2xl">🎵</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">개인 음악 라이브러리</h4>
+                                <p class="text-gray-600 mb-3">
+                                    생성된 음악들을 저장하고 관리할 수 있는 개인 라이브러리, 태그 및 분류 기능
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-green-50 text-green-800 text-xs px-2 py-1 rounded">Spring Boot</span>
+                                    <span class="bg-blue-50 text-blue-800 text-xs px-2 py-1 rounded">JPA</span>
+                                    <span class="bg-orange-50 text-orange-800 text-xs px-2 py-1 rounded">AWS S3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 기술 아키텍처 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">기술 아키텍처</h3>
+                <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-md">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Frontend -->
+                        <div class="text-center p-6 bg-blue-50 rounded-lg">
+                            <h4 class="font-bold text-blue-800 mb-4">Frontend</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• React</li>
+                                <li>• Redux Toolkit</li>
+                                <li>• Material-UI</li>
+                                <li>• Web Audio API</li>
+                            </ul>
+                        </div>
+                        <!-- Backend -->
+                        <div class="text-center p-6 bg-green-50 rounded-lg">
+                            <h4 class="font-bold text-green-800 mb-4">Backend</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• Spring Boot</li>
+                                <li>• Spring Security</li>
+                                <li>• JPA/Hibernate</li>
+                                <li>• RESTful API</li>
+                            </ul>
+                        </div>
+                        <!-- AI/ML -->
+                        <div class="text-center p-6 bg-purple-50 rounded-lg">
+                            <h4 class="font-bold text-purple-800 mb-4">AI/ML</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• FastAPI</li>
+                                <li>• Keras/TensorFlow</li>
+                                <li>• Music21 (MIDI)</li>
+                                <li>• NLTK (NLP)</li>
+                            </ul>
+                        </div>
+                        <!-- Infrastructure -->
+                        <div class="text-center p-6 bg-orange-50 rounded-lg">
+                            <h4 class="font-bold text-orange-800 mb-4">Infrastructure</h4>
+                            <ul class="space-y-2 text-sm text-gray-700">
+                                <li>• AWS EC2/S3</li>
+                                <li>• RDS (MySQL)</li>
+                                <li>• Docker</li>
+                                <li>• CI/CD Pipeline</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 리팩토링 계획 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">리팩토링 로드맵</h3>
+                <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-md">
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-blue-100 p-3 rounded-full">
+                                <span class="text-blue-600 font-bold text-sm">1</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-gray-900">Legacy Code 분석 및 현대화</h4>
+                                <p class="text-gray-600 text-sm">기존 졸업 작품 코드를 분석하고 현대적 기술 스택으로 마이그레이션</p>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded">코드 리뷰</span>
+                                    <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">React 마이그레이션</span>
+                                    <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">API 재설계</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-green-100 p-3 rounded-full">
+                                <span class="text-green-600 font-bold text-sm">2</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-gray-900">AI 모델 성능 개선</h4>
+                                <p class="text-gray-600 text-sm">음악 생성 품질 향상 및 다양한 장르 지원을 위한 모델 업그레이드</p>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded">모델 최적화</span>
+                                    <span class="bg-red-100 text-red-700 text-xs px-2 py-1 rounded">데이터셋 확장</span>
+                                    <span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-1 rounded">실시간 생성</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-purple-100 p-3 rounded-full">
+                                <span class="text-purple-600 font-bold text-sm">3</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-gray-900">사용자 경험 개선</h4>
+                                <p class="text-gray-600 text-sm">직관적인 UI/UX 디자인 및 소셜 기능 추가</p>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">UI/UX 리디자인</span>
+                                    <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">소셜 공유</span>
+                                    <span class="bg-orange-100 text-orange-700 text-xs px-2 py-1 rounded">협업 기능</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-orange-100 p-3 rounded-full">
+                                <span class="text-orange-600 font-bold text-sm">4</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-gray-900">클라우드 마이그레이션 & 확장</h4>
+                                <p class="text-gray-600 text-sm">AWS 기반 마이크로서비스 아키텍처로 전환 및 서비스 확장</p>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    <span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">MSA 전환</span>
+                                    <span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded">K8s 배포</span>
+                                    <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">모니터링</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 예상 결과물 -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">예상 결과물</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-200">
+                        <h4 class="text-lg font-bold text-blue-800 mb-4">🎵 사용자 시나리오</h4>
+                        <div class="space-y-3 text-gray-700">
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">1</span>
+                                <span class="text-sm">"오늘 비가 와서 우울한 기분"이라고 입력</span>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">2</span>
+                                <span class="text-sm">AI가 감정을 분석하여 잔잔한 피아노 BGM 생성</span>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">3</span>
+                                <span class="text-sm">생성된 음악과 함께 일기 형태의 블로그 작성</span>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">4</span>
+                                <span class="text-sm">개인 라이브러리에 저장 및 다른 사용자와 공유</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-xl p-6 border border-green-200">
+                                                    <h4 class="text-lg font-bold text-green-800 mb-4">기대 효과</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center space-x-2">
+                                <span class="text-green-500">✓</span>
+                                <span class="text-sm">창작자들을 위한 새로운 콘텐츠 제작 도구 제공</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <span class="text-green-500">✓</span>
+                                <span class="text-sm">AI와 인간의 창의성이 결합된 혁신적 플랫폼</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <span class="text-green-500">✓</span>
+                                <span class="text-sm">음악 전문 지식 없이도 BGM 제작 가능</span>
+                            </li>
+                            <li class="flex items-center space-x-2">
+                                <span class="text-green-500">✓</span>
+                                <span class="text-sm">개인화된 감정 표현 및 기록 수단</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Coming Soon 알림 -->
+            <section class="mb-16">
+                <div class="bg-gradient-to-r from-purple-100 to-blue-100 rounded-xl p-8 border border-purple-200 text-center">
+                    <span class="text-4xl mb-4 block">🚧</span>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">리팩토링 진행 중</h3>
+                    <p class="text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                        현재 졸업 작품으로 제작했던 Sentifl을 현대적인 기술 스택으로 업그레이드하고 있습니다. 
+                        더 나은 사용자 경험과 고품질의 AI 음악 생성을 위해 열심히 개발 중이니, 
+                        곧 멋진 결과물로 찾아뵙겠습니다!
+                    </p>
+                    <div class="mt-6">
+                        <span class="bg-purple-200 text-purple-800 text-sm font-medium px-4 py-2 rounded-full">
+                            🔄 현재 Phase 1 진행 중: Legacy Code 분석 및 현대화
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- 푸터 -->
+        <footer class="text-center py-16">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="index.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    포트폴리오로 돌아가기
+                </a>
+            </div>
+            <p class="text-sm text-gray-500">
+                &copy; 2025 yooosh. All Rights Reserved.
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html> 
